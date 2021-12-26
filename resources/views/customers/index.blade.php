@@ -2,4 +2,3 @@
 @section('content')
 @include('customers.table')
 @endsection
-@endsection

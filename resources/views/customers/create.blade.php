@@ -7,7 +7,7 @@
 
     <label>Name : </label>
     <input name="cust_name" type="text"/><br>
-    <input name="cust_name" type="text"/><br>
+   
 
     <label> Username : </label>
     <input name="cust_username" type="string"/><br>
