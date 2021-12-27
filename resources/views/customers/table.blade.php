@@ -2,7 +2,8 @@
 
 <div>
     <a style="margin: 19px;" href="{{ route('bookings.create') }}" class="btn btn-primary">Create Booking</a>
-    </div>  
+    </div>  </br>
+
 
     <!-- Success Notification -->
     @if ($message=Session::get('success'))
@@ -11,42 +12,49 @@
       </div>
     @endif
   <!-- End Success Notification -->
+<h1>Edit profile </h1>
+<!-- EDIT form (profile) -->
+<form action="{{ route('customers.store') }}" method="POST">
+    @csrf
 
-<div class="row">
-<div class="col-sm-12">  
-  <table class="table table-striped">
-    <thead>
-        <tr> <!-- Booking here-->
-          <td>ID</td>
-          <td>Date</td>
-          <td>Service type</td>
-          <td>Location</td>
-          <td>Booking status</td>  
-          <td colspan = 4>Options</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($customers as $customer)
-        <tr> <!--bukan attributes customer di sini -->
-            <td>{{$booking->id}}</td>
-            <td>{{$booking->booking_status}}</td>
-            <td>{{$booking->date}}</td>
-            <td>{{$booking->location}}</td> 
-            <td>
-                <a href="{{ route('bookings.edit',$booking->id)}}" class="btn btn-primary">Edit</a>
-            </td>
-            <td>
-                <form action="{{route('bookings.destroy', $booking->id)}}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit" value="Delete">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-  </table>
-<div>
-</div>
+    <div class="form-group">
+      <label>Name : </label>
+      <input name="cust_name" type="text"/><br>
+    </div>
+    
+    <div class="form-group">
+    <label for="location">Location</label>
+    <select class="form-control" id="location">
+      <option>Alor Gajah</option>
+      <option>Jasin</option>
+      <option>Merlimau</option>
+      <option>Masjid Tanah</option>  
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label> Username : </label>
+    <input name="cust_username" type="string"/>
+  </div>
+    
+  <div class="form-group">
+    <label>Address : </label>
+    <textarea class="form-control" name="cust_address"></textarea>
+  </div>
+   
+  <div class="form-group">
+      <label> Phone Number : </label>
+      <input name="cust_username" type="string"/><br>
+  </div>
+    
+   
+ <div class="form-group">
+    <label> Email : </label>
+    <input name="cust_email" type="email"/><br>
+  </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
 
 @endsection

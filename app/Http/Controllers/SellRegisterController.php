@@ -1,5 +1,5 @@
 <?php
-//REFER RegisterController.php
+                                                //REFER RegisterController.php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

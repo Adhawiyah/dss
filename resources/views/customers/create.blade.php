@@ -1,30 +1,41 @@
 @extends('layouts.app')
 @section('content')
+                           
+<div class="row">
+ <div class="col-sm-8 offset-sm-2">
+    <h1 class="display-3">Create</h1>
+  <div>
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
+      <form method="post" action="{{ route('customers.store') }}">
+          @csrf
+          <div class="form-group">    
+              <label for="cust_name">Name:</label>
+              <input type="text" class="form-control" name="cust_name"/>
+          </div>
 
-<!-- CREATE -->
-<form action="{{ route('customers.store') }}" method="POST">
-    @csrf
+          <div class="form-group">
+              <label for="cust_username">Username:</label>
+              <input type="text" class="form-control" name="cust_username"/>
+          </div>
 
-    <label>Name : </label>
-    <input name="cust_name" type="text"/><br>
-   
+          <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="text" class="form-control" name="service_status"/>
+          </div>
+                     
+          <button type="submit" class="btn btn-primary-outline">CREATE</button>
+      </form>
+  </div>
+</div>
+</div>
 
-    <label> Username : </label>
-    <input name="cust_username" type="string"/><br>
-
-    <label> Password : </label>
-    <input name="password" type="password"/><br>
-
-    <label>Address : </label>
-    <input name="cust_address" type="text"/><br>
-
-    <label> Phone Number : </label>
-    <input name="cust_username" type="string"/><br>
-
-    <label> Email : </label>
-    <input name="cust_email" type="email"/><br>
-    
-    <button type="submit">Submit</button>
-</form>
 
 @endsection

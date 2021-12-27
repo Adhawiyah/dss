@@ -85,10 +85,10 @@
             </a>
           </li>  
           <li class="nav-item">
-            <a href="{{ route('home') }}"  class="nav-link">
+            <a href="{{ route('customers.index') }}"  class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Search service & location
+                Search
               </p>
             </a>
           </li>     
@@ -102,14 +102,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/service" class="nav-link">
+                <a href="{{ route('customers.create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/service" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{ route('customers.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>  
                   <p>Edit profile</p>
                 </a>
               </li>             
@@ -126,21 +126,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/service" class="nav-link">
+                <a href="{{ route('bookings.create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Create Booking</p>
+                  <p>Create booking</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/service" class="nav-link">
+                <a href="{{ route('bookings.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>View list Booking</p>
+                  <p>View booking</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/service" class="nav-link">
+                <a href="{{ route('bookings.index') }}" class="nav-link">  
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Edit Booking</p>
+                  <p>Edit booking</p>
                 </a>
               </li>
             </ul>
