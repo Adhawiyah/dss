@@ -19,7 +19,7 @@
       <form method="post" action="{{ route('bookings.store') }}">
           @csrf
           <div class="form-group">  
-              <label for="service_type">Service type:</label>
+              <label for="service_type">Service Type:</label>
               <input type="text" class="form-control" placeholder="service type" name="service_type"/>
           </div>
 
