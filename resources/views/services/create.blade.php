@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.sellerTemplate')
 @section('content')
 
 <div class="row">

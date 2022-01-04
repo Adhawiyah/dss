@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\controller;
 use App\Service;
 use Illuminate\Http\Request;
-
+use DB;
 
 class ServiceController extends Controller
 {
@@ -13,12 +13,12 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view('services.servicesList', compact('services'));
+        return view('services.index', compact('services'));
     }
 
     public function create()
     {
-       return view('services.servicesCreate');
+       return view('services.create');
     }
 
     public function store(Request $request)
@@ -41,10 +41,10 @@ class ServiceController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Service $service)
     {
-        $services = Service::find($id);
-        return view('services.servicesEdit', compact('services'));
+        
+        return view('services.edit', compact('service'));
     }
 
     public function update(Request $request, $id)
@@ -58,6 +58,8 @@ class ServiceController extends Controller
         $services->service_type = $request->service_type;
         $services->service_status = $request->service_status;
         $services->save();
+
+        return redirect()->route('services.index')->with('Success', 'Service updated!');;
     }
 
     public function destroy($services_id)  //CHECK BALIK NIII
@@ -66,6 +68,6 @@ class ServiceController extends Controller
         $services_id = Service::find($services_id);
         $services_id->delete();
 
-        return redirect('/services')->with('success', 'Contact deleted!');
+        return redirect('/services')->with('Success', 'Service deleted!');
     }
 }
