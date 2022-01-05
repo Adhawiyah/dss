@@ -17,7 +17,7 @@ class CreateSellersTable extends Migration
             $table->increments('id');
             $table->string('seller_username');
             $table->string('location');
-            $table->string('seller_phoneNo');
+            $table->string('seller_phoneNo'); 
             $table->timestamps();
         });
     }

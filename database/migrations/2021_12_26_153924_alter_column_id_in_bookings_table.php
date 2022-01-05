@@ -16,8 +16,11 @@ class AlterColumnIdInBookingsTable extends Migration
         Schema::table('bookings', function (Blueprint $table) {
             
             //add foreign key into bookings table (ERROR)
-            $table->foreign('id')->references('id')->on('customers');
-            $table->foreign('id')->references('id')->on('services');
+            $table->integer('cust_id')->unsigned();
+            $table->foreign('cust_id')->references('id')->on('customers')->onDelete('cascade');
+
+            $table->integer('service_id')->unsigned();
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
 
         });
     }

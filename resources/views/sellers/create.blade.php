@@ -4,7 +4,7 @@
 <!-- create service form ni -->
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
-    <h1 class="display-3">Create Service</h1>
+    <h1 class="display-3">Create Profile</h1>
   <div>
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -31,17 +31,6 @@
               <label for="email">Email:</label>
               <input type="text" class="form-control" name="email"/>
           </div>
-          <div class="form-group">
-              <label for="city">City:</label>
-              <input type="text" class="form-control" name="city"/>
-          </div>
-          <div class="form-group">
-              <label for="country">Country:</label>
-              <input type="text" class="form-control" name="country"/>
-          </div>
-          <div class="form-group">
-              <label for="job_title">Job Title:</label>
-              <input type="text" class="form-control" name="job_title"/>
           </div>                         
           <button type="submit" class="btn btn-primary-outline">SUBMIT</button>
       </form>
