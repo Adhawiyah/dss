@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterColumnIdInBookingsTable extends Migration
+class AlterAddSellerIdColumnInBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,16 +14,9 @@ class AlterColumnIdInBookingsTable extends Migration
     public function up()
     {
         Schema::table('bookings', function (Blueprint $table) {
-            
-            //add foreign key into bookings table (ERROR)
-            $table->integer('cust_id')->unsigned();
-            $table->foreign('cust_id')->references('id')->on('customers')->onDelete('cascade');
-
-            $table->integer('service_id')->unsigned();
-            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
-
-
-          
+            //
+            $table->unsignedInteger('seller_id')->nullable();
+            $table->foreign('seller_id')->references('id')->on('sellers')->onDelete('cascade');
         });
     }
 

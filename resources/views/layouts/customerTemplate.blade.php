@@ -84,68 +84,13 @@
               </p>
             </a>
           </li>  
-          <li class="nav-item">
-            <a href="{{ route('customers.index') }}"  class="nav-link">
+
+          <a href="{{ route('customers.index') }}"  class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Search
-              </p>
-            </a>
-          </li>     
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Profile
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('customers.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>View profile</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('customers.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>  
-                  <p>Edit profile</p>
-                </a>
-              </li>             
-            </ul>
-          </li> 
-          <!-- Start Booking Form -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Booking
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('bookings.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create booking</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('bookings.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>View booking</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('bookings.index') }}" class="nav-link">  
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Edit booking</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!--End Booking Form -->
+                Search</p>
+          </a>
+ <!--LOG OUT-->
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
