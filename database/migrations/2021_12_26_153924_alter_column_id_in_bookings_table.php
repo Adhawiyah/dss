@@ -19,8 +19,7 @@ class AlterColumnIdInBookingsTable extends Migration
             $table->integer('cust_id')->unsigned();
             $table->foreign('cust_id')->references('id')->on('customers')->onDelete('cascade');
 
-            $table->integer('service_id')->unsigned();
-            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+            
 
 
           

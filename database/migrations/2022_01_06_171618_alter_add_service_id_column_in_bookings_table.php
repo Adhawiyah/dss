@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterAddSellerIdColumnInBookingsTable extends Migration
+class AlterAddServiceIdColumnInBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,8 @@ class AlterAddSellerIdColumnInBookingsTable extends Migration
     {
         Schema::table('bookings', function (Blueprint $table) {
             //
-            $table->unsignedInteger('seller_id')->nullable();
-            $table->foreign('seller_id')->references('id')->on('sellers')->onDelete('cascade');
-
+            $table->unsignedInteger('service_id')->nullable();
+            $table->foreign('service_id')->references('id')->on('bookings');
         });
     }
 

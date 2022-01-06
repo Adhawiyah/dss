@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterColumnIdInServicesTable extends Migration
+class AlterAddSellIdColumnInServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,9 @@ class AlterColumnIdInServicesTable extends Migration
     public function up()
     {
         Schema::table('services', function (Blueprint $table) {
-          
-            //add foreign keys
-            $table->integer('seller_id')->unsigned()->nullable();
-            $table->foreign('seller_id')->references('id')->on('sellers')->onDelete('cascade');
-
+            //
+            $table->unsignedInteger('seller_id')->nullable();
+            $table->foreign('seller_id')->references('id')->on('services');
         });
     }
 
