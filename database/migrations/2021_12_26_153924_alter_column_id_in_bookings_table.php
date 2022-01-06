@@ -18,6 +18,12 @@ class AlterColumnIdInBookingsTable extends Migration
             //add foreign key into bookings table (ERROR)
             $table->integer('cust_id')->unsigned();
             $table->foreign('cust_id')->references('id')->on('customers')->onDelete('cascade');
+<<<<<<< HEAD
+=======
+
+            $table->integer('service_id')->unsigned();
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+>>>>>>> 3505d56df9194e409446a4855d28892f12e6250f
 
             
 
