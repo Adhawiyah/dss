@@ -21,15 +21,24 @@
               <input type="text" class="form-control" name="service_type"/>
           </div>
 
-          <div class="form-group">
-              <label for="location">Location:</label>
-              <input type="text" class="form-control" name="location"/>
-          </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                 <label>Location</label>
+                    <select class="form-control @error('name') is-invalid @enderror" id="sel3" name="location" value="{{ old('location') }}">
+                       <option selected disabled> --Location-- </option>
+                      @foreach ($sell as $sellers)  <!-- Location ni ambik dr seller profile ,auto insert here-->
+                          <option value="{{ $sellers->location}}">{{ $sellers->location }}</option>
+                      @endforeach
+                    </select>
+                </div>
+           </div>
 
-          <div class="form-group">
-              <label for="service_status">status:</label>
-              <input type="text" class="form-control" name="service_status"/>
-          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label> Service Status</label> <!--Active/Not Active -->
+               <input type="text" class="form-control @error('service_status') is-invalid @enderror" id="" name="service_status">
+            </div>
+          </div> 
                      
           <button type="submit" class="btn btn-primary-outline">CREATE</button>
       </form>
