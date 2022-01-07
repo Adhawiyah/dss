@@ -14,37 +14,45 @@
         </div>
         <br /> 
         @endif
-        <form method="post" action="{{ route('contacts.update', $contact->id) }}">
+        <form method="post" action="{{ route('sellers.update', $sellers->id) }}">
             @method('PATCH') 
             @csrf
             <div class="form-group">
 
-                <label for="first_name">First Name:</label>
-                <input type="text" class="form-control" name="first_name" value={{ $contact->first_name }} />
+                <label for="seller_name"> Name:</label>
+                <input type="text" class="form-control" name="seller_name" value={{ $sellers->seller_name }} />
             </div>
 
             <div class="form-group">
-                <label for="last_name">Last Name:</label>
-                <input type="text" class="form-control" name="last_name" value={{ $contact->last_name }} />
+                <label for="last_name">Username:</label>
+                <input type="text" class="form-control" name="seller_username" value={{ $sellers->seller_username }} />
             </div>
 
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" class="form-control" name="email" value={{ $contact->email }} />
+                <label for="password">Password:</label>
+                <input type="text" class="form-control" name="password" value={{ $sellers->password }} />
+            </div>
+
+            <div class="form-group">
+                <label for="serialNo">Serial No.:</label>
+                <input type="text" class="form-control" name="serialNo" value={{ $sellers->serialNo }} />
+            </div>
+            
+            <div class="form-group">
+                <label for="seller_email">Email:</label>
+                <input type="text" class="form-control" name="seller_email" value={{ $sellers->seller_email }} />
             </div>
             <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" class="form-control" name="city" value={{ $contact->city }} />
+                <label for="location">Location:</label>
+                <input type="text" class="form-control" name="location" value={{ $sellers->location }} />
             </div>
+
             <div class="form-group">
-                <label for="country">Country:</label>
-                <input type="text" class="form-control" name="country" value={{ $contact->country }} />
+                <label for="seller_phoneNo">Phone Number:</label>
+                <input type="text" class="form-control" name="seller_phoneNo" value={{ $sellers->seller_phoneNo }} />
             </div>
-            <div class="form-group">
-                <label for="job_title">Job Title:</label>
-                <input type="text" class="form-control" name="job_title" value={{ $contact->job_title }} />
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+
+            <button type="submit" class="btn btn-primary">SAVE</button>
         </form>
     </div>
 </div>

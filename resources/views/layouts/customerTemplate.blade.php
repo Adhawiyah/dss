@@ -46,7 +46,7 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Search</a>
-      </li>
+      </li> 
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -77,10 +77,14 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+          <a href="{{ route('customers.create') }}"  class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p> Profile</p>
+          </a>
+
           <a href="{{ route('customers.index') }}"  class="nav-link">
               <i class="nav-icon fas fa-table"></i>
-              <p>
-                Search</p>
+              <p>Search </p>
           </a>
  <!--LOG OUT-->
           <li class="nav-item">

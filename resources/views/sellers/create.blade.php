@@ -17,20 +17,41 @@
     @endif
       <form method="post" action="{{ route('sellers.store') }}">
           @csrf
-          <div class="form-group">    
-              <label for="first_name">First Name:</label>
-              <input type="text" class="form-control" name="first_name"/>
-          </div>
-
           <div class="form-group">
-              <label for="last_name">Last Name:</label>
-              <input type="text" class="form-control" name="last_name"/>
-          </div>
 
-          <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="text" class="form-control" name="email"/>
-          </div>
+                <label for="seller_name"> Name:</label>
+                <input type="text" class="form-control" name="seller_name" value={{ $seller->seller_name }} />
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Username:</label>
+                <input type="text" class="form-control" name="seller_username" value={{ $seller->seller_username }} />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" class="form-control" name="password" value={{ $seller->password }} />
+            </div>
+
+            <div class="form-group">
+                <label for="serialNo">Serial No.:</label>
+                <input type="text" class="form-control" name="serialNo" value={{ $seller->serialNo }} />
+            </div>
+            
+            <div class="form-group">
+                <label for="seller_email">Email:</label>
+                <input type="text" class="form-control" name="seller_email" value={{ $seller->seller_email }} />
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" class="form-control" name="location" value={{ $seller->location }} />
+            </div>
+
+            <div class="form-group">
+                <label for="seller_phoneNo">Phone Number:</label>
+                <input type="text" class="form-control" name="seller_phoneNo" value={{ $seller->seller_phoneNo }} />
+            </div>
+
           </div>                         
           <button type="submit" class="btn btn-primary-outline">SUBMIT</button>
       </form>

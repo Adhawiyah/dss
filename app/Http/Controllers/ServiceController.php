@@ -18,8 +18,8 @@ class ServiceController extends Controller
 
     public function create()
     {
-        $sell = DB::table('sellers')->get();
-         return view('services.create',compact('sell'));
+        $seller = DB::table('sellers')->get();
+         return view('services.create',compact('seller'));
     }
 
     public function store(Request $request)
@@ -71,4 +71,5 @@ class ServiceController extends Controller
 
         return redirect('/services')->with('Success', 'Service deleted!');
     }
+    
 }

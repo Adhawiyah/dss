@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.customerTemplate')
 @section('content')
 <!-- REFER YG ADD BOOKING-->
       <div class="page-wrapper">
@@ -18,8 +18,15 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label> Username</label>
-                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="sel1" name="cust_username">
+                                    <label> Username:</label>
+                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="sel1" name="cust_username" value="{{ old('cust_username') }}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label> Phone Number:</label>
+                                    <input type="text" class="form-control @error('cust_phoneNo') is-invalid @enderror" id="sel1" name="cust_phoneNo" value="{{ old('cust_phoneNo') }}">
                                 </div>
                             </div>
 
@@ -32,6 +39,13 @@
                                         <option value="{{ $services->service_type}}">{{ $services->service_type }}</option>   
                                         @endforeach
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label> Address :</label>
+                                    <input type="textarea" class="form-control @error('cust_address') is-invalid @enderror" id="sel1" name="cust_address">
                                 </div>
                             </div>
 
@@ -60,20 +74,10 @@
                                     </div>
                                 </div>
                             </div>      
-                            
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label> Status</label> <!--dropdown (active, not active) -->
-                                    <input type="text" class="form-control @error('booking_status') is-invalid @enderror" id="sel1" name="booking_status">
-                                </div>
-                            </div>  
-
                         </div>
                     </div>
                 </div>
-                <!-- show the shark (uses the show method found at GET /sharks/{id} -->
-                <a class="btn btn-small btn-success" href="{{ URL::to('bookings/' . $booking->id) }}">Show</a>
-                <button type="submit" class="btn btn-primary buttonedit1">Create Booking</button>
+                <button type="submit" class="btn btn-primary-outline">CREATE</button>
             </form>
         </div>
     </div>
