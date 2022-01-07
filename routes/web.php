@@ -11,6 +11,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//ALL ROUTES 
+Route::resource('customers','CustomerController');
+Route::resource('sellers','SellerController');
+Route::resource('services','ServiceController');
+Route::resource('bookings','BookingController');
+
 /*
 //Bookings (CRUD)
 Route::get('/bookings', [App\Http\Controllers\BookingController::class, 'index'])->name('bookings.index');
@@ -25,13 +31,8 @@ Route::post('/services/add', [App\Http\Controllers\ServiceController::class, 'st
 Route::post('/services/{services_id}', [App\Http\Controllers\ServiceController::class, 'destroy'])->name('services.destroy');
 */
 
-//ALL ROUTES 
-Route::resource('customers','CustomerController');
-Route::resource('sellers','SellerController');
-Route::resource('services','ServiceController');
-Route::resource('bookings','BookingController');
 
-//Admin (view list sellers,delelete seller)
+//Admin 
 Route::get('admin/home',[App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::get('customer/home',[App\Http\Controllers\HomeController::class, 'customerHome'])->name('customer.customer-home')->middleware('is_customer');
 

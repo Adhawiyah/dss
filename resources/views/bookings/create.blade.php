@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary-outline">CREATE</button>
+                <button type="submit" class="btn btn-primary">BOOK</button>
             </form>
         </div>
     </div>

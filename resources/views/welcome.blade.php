@@ -93,9 +93,9 @@
 
                 <div class="links">
                    
-                    <a href="{{ route('services.index')}}">Services</a>
-                    <a href="{{ route('bookings.index')}}">Booking</a>
-                    <a href="{{ route('sellers.index')}}">Seller</a> 
+                    <a href="{{ route('services.index')}}">FACEBOOK</a>
+                    <a href="{{ route('bookings.index')}}">CONTACT</a>
+                    <a href="{{ route('sellers.index')}}">HOME</a> 
                 </div>
             </div>
         </div>

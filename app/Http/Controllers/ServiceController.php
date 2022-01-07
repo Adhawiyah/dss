@@ -19,7 +19,7 @@ class ServiceController extends Controller
     public function create()
     {
         $seller = DB::table('sellers')->get();
-         return view('services.create',compact('seller'));
+         return view('services.create',compact('services','seller'));
     }
 
     public function store(Request $request)

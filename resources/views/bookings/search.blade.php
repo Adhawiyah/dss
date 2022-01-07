@@ -50,8 +50,7 @@
             <td>
                 <form  action="{{ route('services.destroy',$service->id)}}" method="POST">  
                   
-                  <a class="btn btn-primary" href="{{ route('services.edit', $service->id) }}">Edit</a>
-                  <a class="btn btn-info" href="{{ route('services.edit', $service->id) }}">Show</a>
+                  <a class="btn btn-info" href="{{ route('services.edit', $service->id) }}">BOOK</a>
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit" value="delete">Delete</button>

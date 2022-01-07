@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.customerTemplate')
 @section('content')
                            
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
-    <h1 class="display-3">Create</h1>
+    <h6 class="display-4">Create your Profile</h6>
   <div>
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -28,14 +28,30 @@
 
           <div class="form-group">
               <label for="password">Password:</label>
-              <input type="text" class="form-control" name="service_status"/>
+              <input type="text" class="form-control" name="password"/>
+          </div>
+
+          <div class="form-group">    
+              <label for="cust_email">Email:</label>
+              <input type="email" class="form-control" name="cust_email"/>
+          </div>
+
+          <div class="form-group">    
+              <label for="cust_phoneNo">Phone Number:</label>
+              <input type="text" class="form-control" name="cust_phoneNo"/>
+          </div>
+
+          <div class="form-group">    
+              <label for="cust_address">Address:</label>
+              <input type="textarea" class="form-control" name="cust_address" rows="4" cols="50"/> 
           </div>
                      
-          <button type="submit" class="btn btn-primary-outline">CREATE</button>
+          <button type="submit" class="btn btn-primary">CREATE</button>
       </form>
   </div>
 </div>
 </div>
+
 
 
 @endsection

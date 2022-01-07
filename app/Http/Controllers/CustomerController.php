@@ -79,8 +79,8 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-         $customers = Customer::find($id);
-        return view('customers.table', compact('customers'));
+        $customers = Customer::find($id);
+        return view('customers.edit', compact('customers'));
         
 
          
