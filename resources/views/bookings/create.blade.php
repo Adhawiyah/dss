@@ -77,7 +77,12 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">BOOK</button>
+                <p><p>
+                  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                     <p><p><button type="submit" class="btn btn-primary"onclick="return confirm('Sure want to Submit')" >Submit</button>
+        
+                       <a class="btn btn-primary" href="{{ route('bookings.index') }}"> Back</a>
+                   </div>
             </form>
         </div>
     </div>

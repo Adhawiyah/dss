@@ -23,15 +23,21 @@
                 <input type="text" class="form-control" name="service_type" value="{{$service->service_type}}" />
             </div>
 
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <input type="text" class="form-control" name="location" value="{{$service->location}}" />
-            </div>
+            <strong>Location  :</strong>
+             <select class="custom-select" name="seller_id">
+              <option selected disabled>Select location</option>
+                 @foreach ($seller as $id => $location )
+                    <option
+                        value="{{$id}}" {{ (isset($service['seller_id']) && $service['seller_id'] == $id) ? ' selected' : '' }}>{{$location}}</option>
+                  @endforeach
+      </select><p><p>
 
             <div class="form-group">
               <label for="service_status">status:</label>
               <input type="text" class="form-control" name="service_status" value="{{$service->service_status}}"/>
           </div>
+
+
  
             <button type="submit" class="btn btn-primary">SAVE</button>
         </form>

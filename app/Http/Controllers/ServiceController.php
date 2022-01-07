@@ -43,26 +43,18 @@ class ServiceController extends Controller
 
     public function edit(Service $service)
     {
-        
-        return view('services.edit', compact('service'));
+        $seller = Seller::pluck('location','id');
+        return view('services.edit', compact('service','seller'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Service $service)
     {
-        $request->validate([
-            'service_type'=>'required',
-            'service_status'=>'required',
-        ]);
+        $service->update($request->all());
 
-        $services = Service::find($id);
-        $services->service_type = $request->service_type;
-        $services->service_status = $request->service_status;
-        $services->save();
-
-        return redirect()->route('services.index')->with('Success', 'Service updated!');;
+        return redirect()->route('services.index')->with('Success', 'Service has been edited!');;
     }
 
-    public function destroy($services_id)  //CHECK BALIK NIII
+    public function destroy($services_id)  
     {
         
         $services_id = Service::find($services_id);

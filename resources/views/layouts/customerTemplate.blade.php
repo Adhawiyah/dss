@@ -47,6 +47,10 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Search</a>
       </li> 
+
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('bookings.create') }}" class="nav-link">Booking</a>
+      </li> 
     </ul>
   </nav>
   <!-- /.navbar -->
