@@ -24,13 +24,6 @@
     <div class="row">
           <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong> Username:</strong>
-                <input style="text-transform:uppercase" type="text" name="seller_username" class="form-control" placeholder="seller_username" required>
-            </div>
-          </div>
-
-          <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
                 <strong> Service Type:</strong>
                 <input style="text-transform:uppercase" type="text" name="service_type" class="form-control" placeholder="service type" required>
             </div>
@@ -38,19 +31,22 @@
 
         <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong>Location:</strong>
-                <input type="text" class="form-control" name="location" placeholder="location" required>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
                 <strong>Service Status:</strong>
                  <input type="text" class="form-control" name="service_status" placeholder="service status" required>
             </div>
         </div>
 
+        <strong>Location  :</strong>
+        <select class="custom-select" name="seller_id">
+        <option selected disabled>Select location</option>
+            @foreach ($seller as $id => $location )
+                    <option
+                        value="{{$id}}" {{ (isset($ervices['seller_id']) && $services['seller_id'] == $id) ? ' selected' : '' }}>{{$location}}</option>
+                @endforeach
+      </select><p><p>
+      <p><p>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary"onclick="return confirm('Sure want to Submit')" >Submit</button>
+                <p><p><button type="submit" class="btn btn-primary"onclick="return confirm('Sure want to Submit')" >Submit</button>
         
                 <a class="btn btn-primary" href="{{ route('services.index') }}"> Back</a>
         </div>

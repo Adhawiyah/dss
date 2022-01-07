@@ -21,17 +21,17 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($sellers as $seller)
+        @foreach($services as $s)
         <tr><!-- letak service_type sini-->
-            <td>{{$seller->id}}</td>  
-            <td>{{$service->service_type}}</td>
-            <td>{{$seller->location}}</td>
-            <td>{{$service->service_status}}</td> 
+            <td>{{$s->id}}</td>  
+            <td>{{$s->service_type}}</td>
+            <td>{{$s->seller->location}}</td>
+            <td>{{$s->service_status}}</td> 
             <td>
-                <a href="{{ route('sellers.edit',$seller->id)}}" class="btn btn-primary">Edit</a>
+                <a href="{{ route('services.edit',$s->id)}}" class="btn btn-primary">Edit</a>
             </td>
             <td>
-                <form action="{{route('sellers.destroy', $seller->id)}}" method="post">
+                <form action="{{route('services.destroy', $s->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

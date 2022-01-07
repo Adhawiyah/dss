@@ -79,15 +79,10 @@
  
           <a href="{{ route('sellers.index') }}"  class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Dashboard </p>
-          </a>
-
-          <a href="{{ route('sellers.create') }}"  class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Profile </p>
           </a>
 
-          <a href="{{ route('sellers.index') }}"  class="nav-link">
+          <a href="{{ route('services.index') }}"  class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Services</p>
           </a>

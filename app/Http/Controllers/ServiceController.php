@@ -6,32 +6,31 @@ use App\Http\Controllers\controller;
 use App\Service;
 use Illuminate\Http\Request;
 use DB;
+use App\Seller;
 
 class ServiceController extends Controller
 {
   
     public function index()
     {
-        $services = Service::all();
+        $services = Service::with('seller')
+        ->get(); //edited
         return view('services.index', compact('services'));
     }
 
     public function create()
     {
-        $seller = DB::table('sellers')->get();
-         return view('services.create',compact('services','seller'));
+        $seller = Seller::pluck('location','id');
+
+        return view('services.create',compact('seller'));
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'service_type'=>'required',
-            'service_status'=>'required',
-        ]);
-
+    {      
         $services = Service::create([
             'service_type'=>$request->service_type,
             'service_status'=>$request->service_status,
+            'seller_id' => $request->seller_id,
         ]);
 
         return redirect()->route('services.index')->with('Success!');
