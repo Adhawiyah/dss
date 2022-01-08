@@ -1,22 +1,25 @@
-@extends('layouts.app')  <!--copy from bookingList.blade -->
+@extends('layouts.customerTemplate')  
 @section('content')
- 
+
 <div class="row">
 <div class="col-sm-12">  
   <h3>List of Bookings</h3><br>
   <table class="table table-striped">
     <thead>
         <tr> 
-        <td>ID</td>
-            <th>Location</th></br>
-            <th>Status</th>
-            <th>Date</th>   
-          <th colspan = 4>Options</th>
+            <th>ID</th>
+            <th>Seller Name</th>
+            <th>Service type</th>
+            <th>Location</th>
+            <th>Date</th> 
+            <th>Status</th>  
+            <th colspan = 6>Action</th>
         </tr>
     </thead>
     <tbody>
         @foreach($bookings as $booking)
         <tr> 
+            <td>{{$booking->id}}</td>
             <td>{{$booking->id}}</td>
             <td>{{$booking->date}}</td>
             <td>{{$booking->location}}</td>

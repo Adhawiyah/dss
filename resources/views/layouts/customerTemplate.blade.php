@@ -82,7 +82,7 @@
                  <p> Profile</p>
              </a>
 
-          <a href="{{ route('customers.index') }}"  class="nav-link">
+          <a href="{{ route('customers.search') }}"  class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Search </p>
           </a>

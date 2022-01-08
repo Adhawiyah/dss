@@ -16,6 +16,8 @@ Route::resource('customers','CustomerController');
 Route::resource('sellers','SellerController');
 Route::resource('services','ServiceController');
 Route::resource('bookings','BookingController');
+Route::resource('searchs','SearchController');
+
 
 /*
 //Bookings (CRUD)
