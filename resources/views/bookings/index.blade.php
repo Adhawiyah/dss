@@ -3,6 +3,7 @@
  
 <div class="row">
 <div class="col-sm-12">  
+  <h3>List of Bookings</h3><br>
   <table class="table table-striped">
     <thead>
         <tr> 

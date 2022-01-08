@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.customerTemplate')
 @section('content')
 
 <!-- EDIT form (profile) -->
