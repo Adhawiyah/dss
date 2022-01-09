@@ -29,27 +29,3 @@ Route::get('/services/create', [App\Http\Controllers\ServiceController::class, '
 Route::post('/services/add', [App\Http\Controllers\ServiceController::class, 'store'])->name('services.store');
 Route::post('/services/{services_id}', [App\Http\Controllers\ServiceController::class, 'destroy'])->name('services.destroy');
 */
-
-
-//Search function routes
-/*Route::get('/', function (Request $request) {
-    
-    $product = Product::where( function($query) use($request){
-                     return $request->price_id ?
-                            $query->from('prices')->where('id',$request->price_id) : '';
-                })->where(function($query) use($request){
-                     return $request->color_id ?
-                            $query->from('colors')->where('id',$request->color_id) : '';
-                })
-                ->with('price','color')
-                ->get();
-     
-    $selected_id = [];
-    $selected_id['service_id'] = $request->service_id;
-    $selected_id['seller_id'] = $request->seller_id;
-
-    return view('search',compact('service','seller','selected_id'));
-
-})->name('filter');
-
-*/
