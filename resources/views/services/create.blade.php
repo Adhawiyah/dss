@@ -29,7 +29,7 @@
             </div>
           </div>
 
-        <div class="col-xs-6 col-sm-6 col-md-12">
+          <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
                 <strong>Service Status:</strong>
                  <input type="text" class="form-control" name="service_status" placeholder="service status" required>

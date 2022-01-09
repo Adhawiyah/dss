@@ -70,7 +70,6 @@
           
         </div>
       </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -78,21 +77,21 @@
                with font-awesome or any other icon font library -->
  
           <a href="{{ route('sellers.index') }}"  class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="far fa-user-circle"></i>
               <p>Profile </p>
           </a>
-
+          <br>
           <a href="{{ route('services.index') }}"  class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="fab fa-servicestack"></i>
               <p>Services</p>
           </a>
- 
+          <br>
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
-              <p> Log Out</p>
+                  <p> Log Out</p>
               
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -37,8 +37,6 @@
               <input type="text" class="form-control" name="service_status" value="{{$service->service_status}}"/>
           </div>
 
-
- 
             <button type="submit" class="btn btn-primary">SAVE</button>
         </form>
     </div>

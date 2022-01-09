@@ -19,16 +19,16 @@ Route::resource('bookings','BookingController');
 Route::resource('searchs','SearchController');
 
 
+//Admin 
+Route::get('admin/home',[App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('customer/home',[App\Http\Controllers\HomeController::class, 'customerHome'])->name('customer.customer-home')->middleware('is_customer');
 
-//Services (CRUD)
+/*
 Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services.index');
 Route::get('/services/create', [App\Http\Controllers\ServiceController::class, 'create'])->name('services.create');
 Route::post('/services/add', [App\Http\Controllers\ServiceController::class, 'store'])->name('services.store');
 Route::post('/services/{services_id}', [App\Http\Controllers\ServiceController::class, 'destroy'])->name('services.destroy');
-
-//Admin 
-Route::get('admin/home',[App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
-Route::get('customer/home',[App\Http\Controllers\HomeController::class, 'customerHome'])->name('customer.customer-home')->middleware('is_customer');
+*/
 
 
 //Search function routes
@@ -45,10 +45,10 @@ Route::get('customer/home',[App\Http\Controllers\HomeController::class, 'custome
                 ->get();
      
     $selected_id = [];
-    $selected_id['price_id'] = $request->price_id;
-    $selected_id['color_id'] = $request->color_id;
+    $selected_id['service_id'] = $request->service_id;
+    $selected_id['seller_id'] = $request->seller_id;
 
-    return view('test',compact('product','selected_id'));
+    return view('search',compact('service','seller','selected_id'));
 
 })->name('filter');
 

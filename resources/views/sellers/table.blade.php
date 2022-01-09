@@ -1,7 +1,16 @@
 @extends('layouts.sellerTemplate')
 @section('content')
 
-    <section style="background-color: #eee;">
+    <!-- Success Notification -->
+    @if ($message=Session::get('success'))
+      <div class="alert alert-success">
+        <p>{{$message}}</p>
+      </div>
+    @endif
+  <!-- End Success Notification -->
+
+  
+<section style="background-color: #eee;">
   <div class="container py-5">
     <div class="row">
       <div class="col">
@@ -20,17 +29,17 @@
         <div class="card mb-4">
           <div class="card-body text-center">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">John Smith</h5>
-            <p class="text-muted mb-1">Full Stack Developer</p>
-            <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
-            <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary">Follow</button>
-              <button type="button" class="btn btn-outline-primary ms-1">Message</button>
-            </div>
           </div>
-        </div>
-        
+
+           <div>
+             <center> 
+             <p><p> <a style="margin: 19px;" href="{{ route('sellers.create') }}" class="btn btn-primary">Edit Profile</a>
+             </center>
+          </div> 
+          
+        </div>  
       </div>
+
       <div class="col-lg-8">
         <div class="card mb-4">
           <div class="card-body">
@@ -80,11 +89,11 @@
             </div>
           </div>
         </div>
-          <!--letak button Edit Profile sini -->
       </div>
+ 
     </div>
   </div>
 </section>
-    
-@endsection
 
+
+  @endsection
