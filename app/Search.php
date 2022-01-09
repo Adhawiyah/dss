@@ -13,18 +13,16 @@ class Search extends Model
        
     ];
 
-    public function seller(){
-        return $this->belongsTo(Seller::class, 'seller_id' );
-    }
-    
     public function customer(){
         return $this->belongsTo(Customer::class, 'cust_id' );
     }
     
+    public function seller(){
+        return $this->belongsTo(Seller::class, 'seller_id' );
+    }
+
     public function service(){
         return $this->belongsTo(Service::class, 'service_id' );
     }
-    
-
 
 }
