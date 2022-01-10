@@ -72,12 +72,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>   
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="">Home</a>   
+                        <a href="">Login</a>
                     @else 
-                        <a href="{{ route('customers.index') }}">CUSTOMER</a>  
-                        <a href="{{ route('sellers.index') }}">SELLER</a>
-                        <a href="{{ route('login') }}">ADMIN</a> 
+                        <a href="/customer/login">CUSTOMER</a>  
+                        <a href="/seller/login">SELLER</a>
+                        <a href="/admin/login">ADMIN</a> 
                     <!--    @if (Route::has('register'))
                            <a href="{{ route('register') }}">Register</a>  
                         @endif -->
@@ -93,9 +93,9 @@
 
                 <div class="links">
                    
-                    <a href="{{ route('services.index')}}">Services</a>
-                    <a href="{{ route('bookings.index')}}">Booking</a>
-                    <a href="{{ route('sellers.index')}}">Seller</a> 
+                    <a href="">Services</a>
+                    <a href="">Booking</a>
+                    <a href="">Seller</a> 
                 </div>
             </div>
         </div>
