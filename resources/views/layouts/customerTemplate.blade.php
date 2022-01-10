@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>DSS|Customer</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -43,10 +43,10 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
-      </li>
+      </li> 
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Profile</a>
-      </li>
+        <a href="#" class="nav-link">Search</a>
+      </li> 
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -56,7 +56,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Customer</span>
     </a>
 
     <!-- Sidebar -->
@@ -76,76 +76,23 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="{{ route('home') }}"  class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>  
-          <li class="nav-item">
-            <a href="{{ route('customers.index') }}"  class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Search
-              </p>
-            </a>
-          </li>     
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Profile
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('customers.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>View profile</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('customers.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>  
-                  <p>Edit profile</p>
-                </a>
-              </li>             
-            </ul>
-          </li> 
-          <!-- Start Booking Form -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Booking
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('bookings.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create booking</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('bookings.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>View booking</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('bookings.index') }}" class="nav-link">  
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Edit booking</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!--End Booking Form -->
+        
+             <a href="{{ route('customers.index') }}"  class="nav-link">
+             <i class="far fa-user-circle"></i></i>
+                 <p> Profile</p>
+             </a>
+            <br>
+          <a href=#  class="nav-link">
+           <i class="fas fa-search"></i></i>
+              <p>Search </p>
+          </a>
+            <br>
+          <a href="{{ route('bookings.index') }}"  class="nav-link">
+              <i class="fas fa-pencil-alt"></i>
+              <p><p>Booking</p>
+          </a>
+          <br>
+ <!--LOG OUT-->
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
@@ -171,13 +118,13 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
+         <div class="col-sm-6">
+           <!-- <h1 class="m-0"></h1> -->
+          </div> <!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Customer Dashboard</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

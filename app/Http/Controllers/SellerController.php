@@ -53,7 +53,7 @@ class SellerController extends Controller
     public function edit($id)
     {
         $sellers = Seller::find($id);
-        return view('sellers.sellersEdit', compact('sellers'));
+        return view('sellers.edit', compact('sellers'));
     }
 
     public function update(Request $request, $id)

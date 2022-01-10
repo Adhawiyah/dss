@@ -93,9 +93,15 @@
 
                 <div class="links">
                    
+<<<<<<< HEAD
                     <a href="">Services</a>
                     <a href="">Booking</a>
                     <a href="">Seller</a> 
+=======
+                    <a href="{{ route('services.index')}}">FACEBOOK</a>
+                    <a href="{{ route('bookings.index')}}">CONTACT</a>
+                    <a href="{{ route('sellers.index')}}">HOME</a> 
+>>>>>>> 6179bf29ecc50aa7e12a18353187d82bde733dc1
                 </div>
             </div>
         </div>

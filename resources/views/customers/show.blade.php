@@ -1,4 +1,4 @@
-@extends('layouts.app')  <!-- View list details of Customer // this page???-->
+@extends('layouts.customerTemplate')  <!-- View list details of Customer // this page???-->
 @section('content')
 
 <h1>CUSTOMER</h1>
