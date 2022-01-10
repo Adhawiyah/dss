@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;  //adha tmbh
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Seller;
@@ -52,27 +55,43 @@ class SellerAuthController extends Controller
             'seller_email'=>'required|email', 
             'password'=>'required|min:5|max:12',
         ]); 
- 
+        
 
         $seller = Seller::where('seller_email', $request->seller_email)->first();   
        // $seller = Seller::where('code',$form_code)->where('user_id',$seller->id)->first();
 
-        if($seller){
-            if(Hash::check($request->password, $seller->password)){ 
-                $request->session()->put('LoggedSeller', $seller->id);
-                return redirect('seller/profile');
+        if($seller)
+        {
+            if(Auth::guard('seller')->attempt($data,'')) 
+            {
+                $request->session()->regenerate();
+                if(Hash::check($request->password, $seller->password))
+                { 
+                   // $request->session()->put('LoggedSeller', $seller->id);   //adha uncomment 23hb
+                    return redirect('seller/profile');
+                }
+                else
+                {
+                    return back()->with('fail', 'Wrong password entered');
+                }
             }
-            else{
-                return back()->with('fail', 'Wrong password entered');
-            }
-
            
         }else{
             return back()->with('fail', 'No account found for this email');
         }
     }
+        //yg ni function !!
+    // function profile(){
+    //     return view('sellers.profile');
+    // }
 
-    function profile(){
-        return view('sellers.profile');
+    function profile($id)           //adha tmbh
+    {   
+        $seller = Seller::find($id);
+        dd($seller);
+
+       return view('sellers.profile');
     }
+   
+    
 }

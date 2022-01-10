@@ -1,9 +1,5 @@
+@extends('layouts.customerTemplate')
 @section('content')
-
-<div>
-    <a style="margin: 19px;" href="{{ route('bookings.create') }}" class="btn btn-primary">Create Booking</a>
-    </div>  </br>
-
 
     <!-- Success Notification -->
     @if ($message=Session::get('success'))
@@ -12,49 +8,92 @@
       </div>
     @endif
   <!-- End Success Notification -->
-<h1>Edit profile </h1>
-<!-- EDIT form (profile) -->
-<form action="{{ route('customers.store') }}" method="POST">
-    @csrf
 
-    <div class="form-group">
-      <label>Name : </label>
-      <input name="cust_name" type="text"/><br>
+  
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">User</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Customer Profile</li>
+          </ol>
+        </nav>
+      </div>
     </div>
-    
-    <div class="form-group">
-    <label for="location">Location</label>
-    <select class="form-control" id="location">
-      <option>Alor Gajah</option>
-      <option>Jasin</option>
-      <option>Merlimau</option>
-      <option>Masjid Tanah</option>  
-    </select>
-  </div>
 
-  <div class="form-group">
-    <label> Username : </label>
-    <input name="cust_username" type="string"/>
-  </div>
-    
-  <div class="form-group">
-    <label>Address : </label>
-    <textarea class="form-control" name="cust_address"></textarea>
-  </div>
-   
-  <div class="form-group">
-      <label> Phone Number : </label>
-      <input name="cust_username" type="string"/><br>
-  </div>
-    
-   
- <div class="form-group">
-    <label> Email : </label>
-    <input name="cust_email" type="email"/><br>
-  </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+          </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+           <div>
+             <center> 
+             <p><p> <a style="margin: 19px;" href="{{ route('customers.create') }}" class="btn btn-primary">Edit Profile</a>
+             </center>
+          </div> 
+          
+        </div>  
+      </div>
 
-</form>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Johnatan Smith</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">example@example.com</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(097) 234-5678</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(098) 765-4321</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
 
-@endsection
+
+  @endsection

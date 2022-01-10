@@ -1,5 +1,5 @@
 @extends('layouts.sellerTemplate')
 @section('content')
-@include('sellers.table')
-
+@include('services.table')
 @endsection
+ 

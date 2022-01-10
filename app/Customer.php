@@ -2,7 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Model;
+// use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Foundation\Auth\Customer as Authenticatable;
 
 class Customer extends Model
 {

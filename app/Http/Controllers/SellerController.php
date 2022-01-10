@@ -11,9 +11,11 @@ class SellerController extends Controller
     // CRUD seller
     public function index()
     {
+        
         $sellers = Seller::all();
-        return view('sellers.index', compact('sellers'));
+        return view('sellers.profile', compact('sellers'));
     }
+
 
     public function create()
     {
@@ -50,34 +52,53 @@ class SellerController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Seller $seller)
     {
-        $sellers = Seller::find($id);
-        return view('sellers.sellersEdit', compact('sellers'));
+        
+        return view('sellers.edit', compact('sellers'));
+
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request,Seller $seller)
     {
         $request->validate([
-            'seller_name'=>'required',
+        
+         'seller_email' => 'unique:sellers,seller_email,' . Auth::id(),
+            ]);
+            /* 'seller_name'=>'required',
             'seller_username'=>'required',
             'password'=>'required',
             'serialNo'=>'required',
             'seller_email'=>'required',
             'location'=>'required',
-            'seller_phoneNo'=>'required',
+            'seller_phoneNo'=>'required', 
 
-        ]);
+        ]);*/
 
         $sellers = Seller::find($id);
         $sellers->seller_name = $request->seller_name;
         $sellers->seller_username = $request->seller_username;
-        $sellers->password = $request->password;
         $sellers->serialNo = $request->serialNo;
         $sellers->seller_email = $request->seller_email;
         $sellers->location = $request->location;
         $sellers->seller_phoneNo= $request->seller_phoneNo;
         $sellers->save();
+
+        //YG NIZAM PUNYA
+         /*request()->validate([
+            'email' => 'unique:users,email,' . Auth::id(),
+        ]);
+
+        $user = User::find(Auth::id());
+        //$user->name = $request->name;
+       // $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        
+        $user->save();
+        */
+
+        return redirect()->route('sellers.index')->withSuccess('Account succesfully updated');
     }
 
     public function destroy($sellers_id)
@@ -85,6 +106,6 @@ class SellerController extends Controller
         $sellers=Seller::find($sellers_id);
         $sellers->delete();
 
-        return redirect()->route('sellers.index')->with('Success deleted');
+        return redirect()->route('sellers.index')->with('Seller deleted');
     }
 }

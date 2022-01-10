@@ -36,4 +36,5 @@ class AdminAuthController extends Controller
     function adminProfile(){
         return view('admins.profile');
     }
+
 }

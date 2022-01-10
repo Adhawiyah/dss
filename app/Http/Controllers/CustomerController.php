@@ -16,7 +16,13 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view('customers.index', compact('customers'));
+        //return view('customers.index', compact('customers'));
+
+       /* $customer = Auth::customer();
+
+        return view('customers.index', [
+            'customer' => $customer,
+        ]); */
     }
 
     /**
@@ -55,7 +61,7 @@ class CustomerController extends Controller
             'cust_email'=>$request->cust_email,
         ]);
 
-        return redirect()->route('customers.index')->with('Success!');  //chech path ni
+        return redirect()->route('customers.index')->with('Success!');  
     }
 
     /**
@@ -67,8 +73,8 @@ class CustomerController extends Controller
     public function show(Customer $customer)
     {
         
-        $customers = Customer::find($id);
-        return view('customers.show', compact('customers'));
+        $customer = Customer::find($id);
+        //return view('customers.index', compact('customers'));
     }
 
     /**
@@ -79,11 +85,8 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-         $customers = Customer::find($id);
-        return view('customers.table', compact('customers'));
         
-
-         
+        return view('customers.edit', compact('customers'));   
     }
 
     /**
@@ -126,4 +129,5 @@ class CustomerController extends Controller
 
         return redirect()->route('customers.index')->with('Success deleted');
     }
+
 }

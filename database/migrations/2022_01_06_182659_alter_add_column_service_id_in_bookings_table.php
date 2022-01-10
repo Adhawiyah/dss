@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSellersTable extends Migration
+class AlterAddColumnServiceIdInBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateSellersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sellers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('seller_username');
-            $table->string('location');
-            $table->string('seller_phoneNo'); 
-            $table->timestamps();
+        Schema::table('bookings', function (Blueprint $table) {
+            $table->integer('service_id')->unsigned();
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateSellersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sellers');
+        Schema::table('bookings', function (Blueprint $table) {
+            //
+        });
     }
 }

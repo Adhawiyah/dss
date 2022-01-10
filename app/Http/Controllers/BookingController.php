@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use Illuminate\Http\Request;
+use DB;
 
 class BookingController extends Controller
 {
@@ -26,8 +27,11 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
-        return view('bookings.create');
+        // create booking
+        $sel = DB::table('sellers')->get();
+        $ser = DB::table('services')->get();
+        $cus = DB::table('customers')->get();
+        return view('bookings.create',compact('sel','ser','cus'));
     }
 
     /**
@@ -62,7 +66,12 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        // get the booking
+        $bookings = Booking::find($id);
+
+        // show the view and pass the shark to it
+        return View::make('bookings.show')->with('Show details');
     }
 
     /**
@@ -115,4 +124,5 @@ class BookingController extends Controller
 
         return redirect()->route('bookings.index')->with('Success deleted');
     }
+
 }

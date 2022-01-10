@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;
@@ -46,33 +47,54 @@ class CustomerAuthController extends Controller
 
     }
 
-    function custCheckReq(Request $request){
-        
-        $request->validate([ 
+    function custCheckReq(Request $request)
+    {
+            
+        $data=$request->validate([ 
             'cust_email'=>'required|email', 
             'password'=>'required|min:5|max:12',
         ]); 
- 
+            // dd($data);
 
         $customer = Customer::where('cust_email', $request->cust_email)->first();   
        // $customer = Customer::where('code',$form_code)->where('user_id',$seller->id)->first();
 
-        if($customer){
-            if(Hash::check($request->password, $customer->password)){ 
-                $request->session()->put('LoggedCustomer', $customer->id);
-                return redirect('customer/profile');
+        if($customer)
+        {
+            if(Auth::guard('customer')->attempt($data,'')) 
+            {
+                $request->session()->regenerate();
+                if(Hash::check($request->password, $customer->password))
+                { 
+                    // $request->session()->put('LoggedCustomer', $customer->id);
+                    $request->session()->regenerate();
+                    return redirect('customer/profile');
+                }
+                else
+                {
+                    return back()->with('fail', 'Wrong password entered');
+                }
             }
-            else{
-                return back()->with('fail', 'Wrong password entered');
-            }
-
-           
-        }else{
+            
+        }
+        else
+        {
             return back()->with('fail', 'No account found for this email');
         }
     }
 
-    function custProfile(){
-        return view('customers.profile');
+     function custProfile(){
+        
+         dd(Auth::guard('customer'));
+       return view('customers.profile');
+     }
+
+    function profile($id)   
+    {
+        
+        $customer = Customer::find($id);
+         dd($customer);
+        return view('customers.profile',compact('customer'));   
     }
+
 }
