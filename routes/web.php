@@ -49,5 +49,7 @@ Route::get('seller/register', [SellerAuthController::class, 'register' ]);
 Route::post('seller/create', [SellerAuthController::class, 'create' ])->name('auth.create');
 Route::post('seller/checkReq', [SellerAuthController::class, 'checkReq' ])->name('auth.checkReq');
 Route::get('seller/profile', [SellerAuthController::class, 'profile' ]); 
+Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
+
 
 // Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile'); //23

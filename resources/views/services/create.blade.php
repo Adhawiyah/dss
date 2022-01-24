@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <strong style=font-family:courier;> Location  :</strong>
+        <strong style=font-family:courier;>Service Location  :</strong>
         <select class="custom-select" name="seller_id">
         <option selected disabled>Select location</option>
             @foreach ($seller as $id => $location )

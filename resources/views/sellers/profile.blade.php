@@ -33,7 +33,7 @@
                 <p class="mb-0">Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Rabiatul Adhawiyah</p>
+                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
               </div>
             </div>
             <hr>
@@ -42,7 +42,7 @@
                 <p class="mb-0">Address</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Kampung Semerak</p>
+                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
               </div>
             </div>
             <hr>
@@ -51,7 +51,7 @@
                 <p class="mb-0">Phone Number</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">017-9612537</p>
+                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
               </div>
             </div>
             <hr>
@@ -60,7 +60,7 @@
                 <p class="mb-0">Username</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Adha</p>
+                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
               </div>
             </div>
             <hr>
@@ -69,7 +69,7 @@
                 <p class="mb-0">E-mail</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">adha@gmail.com</p>
+                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
               </div>
             </div>
           </div>

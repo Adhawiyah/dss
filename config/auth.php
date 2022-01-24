@@ -50,7 +50,7 @@ return [
             'driver' => 'session',
             'provider' => 'customers',
         ],
-        'seller' => [                   //23hb
+        'seller' => [                   //
             'driver' => 'session',
             'provider' => 'sellers',
         ],
@@ -83,6 +83,11 @@ return [
              'driver' => 'eloquent',
              'model' => App\Customer::class,
          ],
+
+         'sellers' => [
+            'driver' => 'eloquent',
+            'model' => App\Seller::class,
+        ],
     ],
 
     /*

@@ -45,9 +45,9 @@
              <td>{{$service->id}}</td>
              <td>{{$service->seller_name}}</td>
              <td>{{$service->service_type}}</td>
-             <td>{{$service->location}}</td>
+             <td>{{$service->service_location}}</td>
              <td>{{$service->service_status}}</td>
-            <td>
+            <td> <!-- insert BOOK button here -->
                 <form  action="{{ route('services.destroy',$service->id)}}" method="POST">  
                   
                   <a class="btn btn-info" href="{{ route('services.edit', $service->id) }}">BOOK</a>

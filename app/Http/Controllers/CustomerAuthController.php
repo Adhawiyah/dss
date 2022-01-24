@@ -55,7 +55,7 @@ class CustomerAuthController extends Controller
             'password'=>'required|min:5|max:12',
         ]); 
             // dd($data);
-
+            
         $customer = Customer::where('cust_email', $request->cust_email)->first();   
        // $customer = Customer::where('code',$form_code)->where('user_id',$seller->id)->first();
 
@@ -85,7 +85,7 @@ class CustomerAuthController extends Controller
 
      function custProfile(){
         
-         dd(Auth::guard('customer'));
+         //dd(Auth::guard('customer'));
        return view('customers.profile');
      }
 
@@ -93,7 +93,7 @@ class CustomerAuthController extends Controller
     {
         
         $customer = Customer::find($id);
-         dd($customer);
+        // dd($customer);
         return view('customers.profile',compact('customer'));   
     }
 

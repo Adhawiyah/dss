@@ -56,6 +56,7 @@ class SellerAuthController extends Controller
             'password'=>'required|min:5|max:12',
         ]); 
         
+        $data=['seller_email'=>$request->seller_email, 'password'=>$request->password];
 
         $seller = Seller::where('seller_email', $request->seller_email)->first();   
        // $seller = Seller::where('code',$form_code)->where('user_id',$seller->id)->first();
@@ -80,17 +81,21 @@ class SellerAuthController extends Controller
             return back()->with('fail', 'No account found for this email');
         }
     }
-        //yg ni function !!
-    // function profile(){
-    //     return view('sellers.profile');
-    // }
+       
+    //  function profile(){
+    //      return view('sellers.profile');
+    //  }
 
-    function profile($id)           //adha tmbh
+    function profile()           //adha tmbh
     {   
-        $seller = Seller::find($id);
-        dd($seller);
+        // $seller = Seller::find($id);
+        // dd($seller);
+        //dd(auth('seller')->user());
 
-       return view('sellers.profile');
+        $seller=auth('seller')->user();
+       
+       // $seller = Seller::find($user->id);
+       return view('sellers.profile',compact('seller'));
     }
    
     
