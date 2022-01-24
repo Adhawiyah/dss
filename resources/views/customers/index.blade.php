@@ -1,4 +1,4 @@
 @extends('layouts.customerTemplate')
 @section('content')
-@include('customers.table')
+@include('customers.profile')
 @endsection

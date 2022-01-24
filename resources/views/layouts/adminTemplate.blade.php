@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Admin | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -45,7 +45,7 @@
         <a href="index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Report</a>
+        <a href="#" class="nav-link">Profile</a>
       </li>
     </ul>
   </nav>
@@ -67,8 +67,7 @@
           <img src="{{ asset('admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
-          <a href="#" class="d-block">{{ auth()->user()->email }}</a>
+          
         </div>
       </div>
       <!-- Sidebar Menu -->
@@ -76,36 +75,28 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="{{ route('admin.home') }}"  class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>  
-          <li class="nav-item">
-            <a href="{{ route('admin.home') }}"  class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Report
-              </p>
-            </a>
-          </li>   
-          <li class="nav-item">
-            <a href="{{ route('admin.home') }}"  class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                List of Sellers
-              </p>
-            </a>
-          </li>      
+
+         <li>
+            <li class="nav-item">
+          <a href="admins.index"  class="nav-link">
+          <i class="far fa-user-circle"></i>
+              <p>Admin</p>
+          </a>
+          </li>
+          <br>
+          <li>
+            <li class="nav-item">
+          <a href="#"  class="nav-link">
+          <i class="far fa-user-circle"></i>
+              <p>List of Sellers</p>
+          </a>
+          <br>
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
-              <p> Log Out</p>
+                  <p> Log Out</p>  
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
              @csrf
@@ -130,23 +121,22 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Admin Dashboard </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    
+
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-            @yield('content1')
+            @yield('content')
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-  </div> 
-
+  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Training.com</a>.</strong>

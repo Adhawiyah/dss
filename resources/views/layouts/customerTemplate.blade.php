@@ -42,7 +42,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Home</a>
       </li> 
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Search</a>
@@ -56,7 +56,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Customer</span>
+      <span class="brand-text font-weight-light">Daily Services System</span>
     </a>
 
     <!-- Sidebar -->
@@ -76,23 +76,29 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        
-             <a href="{{ route('customers.index') }}"  class="nav-link">
+              <li>
+                <li class="nav-item">
+             <a href="#" class="nav-link">
              <i class="far fa-user-circle"></i></i>
                  <p> Profile</p>
-             </a>
-            <br>
-          <a href=#  class="nav-link">
-           <i class="fas fa-search"></i></i>
+             </a>  
+            </li>
+            
+            <li>
+                <li class="nav-item">
+            <a href="{{route('customers.profile',Auth::guard('customer')->id())}}"  class="nav-link">  
+               {{__('View Profile')}}
+            </a>   
+            </li>
+              <br>
+            <li>
+              <li class="nav-item">
+             <a href=#  class="nav-link">
+              <i class="fas fa-search"></i></i>
               <p>Search </p>
-          </a>
-            <br>
-          <a href="{{ route('bookings.index') }}"  class="nav-link">
-              <i class="fas fa-pencil-alt"></i>
-              <p><p>Booking</p>
-          </a>
-          <br>
- <!--LOG OUT-->
+              </a>
+              </li>
+               <br>
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();

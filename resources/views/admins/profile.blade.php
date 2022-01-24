@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    welcome admin
-</body>
-</html>
+@extends('layouts.adminTemplate')
+@section('content')
+
+
+<table class="table table-bordered">
+  <tr>
+      <th>Id</th> 
+      <th>Seller Name</th> 
+      <th>Action</th>
+
+  </tr>
+  @foreach ($seller as $s)
+  <tr> 
+      <b><td>{{ $s->id}}</td>
+      <b><td>{{ $s->seller_name}}</td>
+  </tr>
+  <td>
+    <form action="{{route('sellers.destroy', $s->id)}}" method="post">
+      @csrf
+      @method('DELETE')
+      <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+</td>
+  @endforeach
+</table>
+
+@endsection

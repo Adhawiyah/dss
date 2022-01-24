@@ -3,7 +3,7 @@
 
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
-    <h1 class="display-3">Create Service</h1>
+    <h1 class="display-3" style=font-family:courier;>Create Service</h1>
   <div>
 
    @if ($errors->any())
@@ -21,22 +21,22 @@
   <form action="{{ route('services.store') }}" method="POST">
     @csrf
   
-    <div class="row">
+    <div class="row" style="background-color: #D3DEDC;">
           <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong> Service Type:</strong>
+                <strong style=font-family:courier;> Service Type:</strong>
                 <input style="text-transform:uppercase" type="text" name="service_type" class="form-control" placeholder="service type" required>
             </div>
           </div>
 
           <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong>Service Status:</strong>
+                <strong style=font-family:courier;>Service Status:</strong>
                  <input type="text" class="form-control" name="service_status" placeholder="service status" required>
             </div>
         </div>
 
-        <strong>Location  :</strong>
+        <strong style=font-family:courier;> Location  :</strong>
         <select class="custom-select" name="seller_id">
         <option selected disabled>Select location</option>
             @foreach ($seller as $id => $location )
