@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\controller;
 use App\Seller;
+use App\Service;   //26hb
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 
 class SellerController extends Controller
 {
@@ -65,7 +67,7 @@ class SellerController extends Controller
         
          'seller_email' => 'unique:sellers,seller_email,' . Auth::id(),
             ]);
-            /* 'seller_name'=>'required',
+            /* 'seller_name'=>'required',   //Auth::id(),
             'seller_username'=>'required',
             'password'=>'required',
             'serialNo'=>'required',
@@ -83,20 +85,6 @@ class SellerController extends Controller
         $sellers->location = $request->location;
         $sellers->seller_phoneNo= $request->seller_phoneNo;
         $sellers->save();
-
-        //YG NIZAM PUNYA
-         /*request()->validate([
-            'email' => 'unique:users,email,' . Auth::id(),
-        ]);
-
-        $user = User::find(Auth::id());
-        //$user->name = $request->name;
-       // $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->address = $request->address;
-        
-        $user->save();
-        */
 
         return redirect()->route('sellers.index')->withSuccess('Account succesfully updated');
     }

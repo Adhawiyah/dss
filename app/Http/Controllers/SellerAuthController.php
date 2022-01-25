@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;  //adha tmbh
+use Illuminate\Support\Facades\Auth;  //tmbh
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -86,17 +86,14 @@ class SellerAuthController extends Controller
     //      return view('sellers.profile');
     //  }
 
-    function profile()           //adha tmbh
+    function profile()           //25hb
     {   
-        // $seller = Seller::find($id);
-        // dd($seller);
-        //dd(auth('seller')->user());
-
+        
         $seller=auth('seller')->user();
-       
-       // $seller = Seller::find($user->id);
        return view('sellers.profile',compact('seller'));
     }
+
+  
    
     
 }

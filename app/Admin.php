@@ -12,4 +12,6 @@ class Admin extends Model
     protected $fillable = [
         'admin_username', 'password'
     ];
+
+    
 }

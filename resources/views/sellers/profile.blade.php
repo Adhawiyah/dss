@@ -33,16 +33,25 @@
                 <p class="mb-0">Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
+                <p class="text-muted mb-0">{{$seller->seller_name}}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Address</p>
+                <p class="mb-0">Serial.No (OKU card)</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
+                <p class="text-muted mb-0">{{$seller->serialNo}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address (location)</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{$seller->location}}</p>
               </div>
             </div>
             <hr>
@@ -51,7 +60,7 @@
                 <p class="mb-0">Phone Number</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
+                <p class="text-muted mb-0">{{$seller->seller_phoneNo}}</p>
               </div>
             </div>
             <hr>
@@ -60,18 +69,19 @@
                 <p class="mb-0">Username</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
+                <p class="text-muted mb-0">{{$seller->seller_username}}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">E-mail</p>
+                <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('seller')->id()}}</p>
+                <p class="text-muted mb-0">{{$seller->seller_email}}</p>
               </div>
             </div>
+            <hr>
           </div>
         </div>
 

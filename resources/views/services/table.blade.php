@@ -23,7 +23,7 @@
         <tr>
             <td>{{$s->id}}</td>  
             <td>{{$s->service_type}}</td>
-            <td>{{$s->seller->location}}</td>  <!-- need to use service_location sini -->
+            <td>{{$s->service_location}}</td>  <!-- need to use service_location sini -->
             <td>{{$s->service_status}}</td> 
             <td>
                 <a href="{{ route('services.edit',$s->id)}}" class="btn btn-primary">Edit</a>

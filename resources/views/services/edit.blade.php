@@ -18,27 +18,55 @@
             @method('PUT') 
             @csrf
             <div class="form-group">
+  
+                <br>
+                <strong>Service Type  :</strong>
+                <select class="custom-select" value="{{$service->service_service_type}}" name="service_type">
+                   @foreach ($service as $s)      
+                   @endforeach
+                   <option selected able>Food Catering</option>
+                   <option selected able>Grab</option>
+                   <option selected able>Nursing</option>
+                    <option selected able>Laundry</option>
+                    <option selected able>Skincare product</option>            
+               </select>   
+              <p><p>
 
-                <label for="service_type">Service Type:</label>
-                <input type="text" class="form-control" name="service_type" value="{{$service->service_type}}" />
-            </div>
+                
+            <strong>Service Location  :</strong>
+             <select class="custom-select" value="{{$service->service_location}}" name="service_location">
+                @foreach ($service as $s)      
+                @endforeach
+                        <option >Alor Gajah</option>
+                        <option >Masjid Tanah</option>
+                        <option >Melaka Tengah</option>
+                         <option >Jasin</option>
+                
+  
+            </select><p><p>
 
-            <strong>Location  :</strong>
-             <select class="custom-select" name="seller_id">
-              <option selected disabled>Select location</option>
-                 @foreach ($seller as $id => $location )
-                    <option
-                        value="{{$id}}" {{ (isset($service['seller_id']) && $service['seller_id'] == $id) ? ' selected' : '' }}>{{$location}}</option>
-                  @endforeach
-      </select><p><p>
+                <strong>Service Status  :</strong>
+                <select class="custom-select" name="service_status">  
+                    @foreach ($service as $s)      
+                @endforeach
+                            <option >Active</option>
+                            <option >Not Active</option>
+                    
+               </select><p><p>
 
-            <div class="form-group">
-              <label for="service_status">status:</label>
-              <input type="text" class="form-control" name="service_status" value="{{$service->service_status}}"/>
+     
+                   </select><p><p>
+
+           {{-- <center> <button type="submit" class="btn btn-primary">SAVE</button> </center> --}}
+
+
+           <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <p><p><button type="submit" class="btn btn-primary"onclick="return confirm('Sure want to Submit')" >Submit</button>
+    
+            <a class="btn btn-primary" href="{{ route('services.index') }}"> Back</a>
           </div>
-
-            <button type="submit" class="btn btn-primary">SAVE</button>
         </form>
     </div>
 </div>
 @endsection
+

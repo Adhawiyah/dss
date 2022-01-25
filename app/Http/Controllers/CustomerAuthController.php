@@ -83,17 +83,18 @@ class CustomerAuthController extends Controller
         }
     }
 
-     function custProfile(){
+    //  function custProfile(){
         
-         //dd(Auth::guard('customer'));
-       return view('customers.profile');
-     }
+    //      //dd(Auth::guard('customer'));
+    //      $customer=auth('customer')->user();
+    //      return view('customers.profile',compact('customer')); 
+       
+    //  }
 
     function profile($id)   
     {
         
-        $customer = Customer::find($id);
-        // dd($customer);
+         $customer = Customer::find($id);
         return view('customers.profile',compact('customer'));   
     }
 

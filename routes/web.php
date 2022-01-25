@@ -24,6 +24,7 @@ Route::resource('sellers','SellerController');
  Route::resource('bookings','BookingController');
  Route::resource('admins','AdminAuthController');
  Route::resource('customers','CustomerAuthController');
+ Route::resource('search','SearchController');
 
 
 //Admin (view list sellers,delelete seller)
@@ -34,7 +35,6 @@ Route::get('admin/index', 'AdminController@index')->name('home');
 Route::get('admin/login', [AdminAuthController::class, 'adminLogin' ]); 
 Route::post('admin/checkReq', [AdminAuthController::class, 'adminCheckReq' ])->name('auth.adminCheckReq');
 Route::get('admin/profile', [AdminAuthController::class, 'adminProfile' ]); 
-//Route::post('admin/profile', [ListSellerController::class, 'index' ])->name('admin.profile');  //23
 
 Route::get('customer/login', [CustomerAuthController::class, 'custLogin' ]); 
 Route::get('customer/register', [CustomerAuthController::class, 'custRegister' ]);
@@ -51,5 +51,5 @@ Route::post('seller/checkReq', [SellerAuthController::class, 'checkReq' ])->name
 Route::get('seller/profile', [SellerAuthController::class, 'profile' ]); 
 Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
 
-
-// Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile'); //23
+//Route::get('/seller/{seller_name}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
+//Route::any('profile/{name}', 'ProfilController@index')->name('profile.index');

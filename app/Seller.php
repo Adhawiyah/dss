@@ -14,5 +14,9 @@ class Seller extends Model
        
     ];
 
+    public function services(){
+        return $this->hasMany(Service::class, 'service_id' );
+     }
     
+
 }

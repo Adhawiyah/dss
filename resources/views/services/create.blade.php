@@ -22,28 +22,49 @@
     @csrf
   
     <div class="row" style="background-color: #D3DEDC;">
-          <div class="col-xs-6 col-sm-6 col-md-12">
+          {{-- <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
                 <strong style=font-family:courier;> Service Type:</strong>
+                
                 <input style="text-transform:uppercase" type="text" name="service_type" class="form-control" placeholder="service type" required>
             </div>
-          </div>
-
-          <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong style=font-family:courier;>Service Status:</strong>
-                 <input type="text" class="form-control" name="service_status" placeholder="service status" required>
-            </div>
-        </div>
-
+          </div> --}}
+          
+          <br>
+                 <strong style=font-family:courier;>Service Type  :</strong>
+                 <select class="custom-select" name="service_type">
+                 <option selected disabled>select service type...</option>
+                 <option >Food Catering</option>
+                     <option >Grab</option>
+                     <option >Nursing</option>
+                      <option >Laundry</option>
+                      <option >Skincare product</option>
+                 </select>  
+                 <p>
+                 <strong style=font-family:courier;>Service Status  :</strong>
+                 <select class="custom-select" name="service_status">
+                 <option selected disabled>select service status...</option>
+                 <option >Active</option>
+                 <option >Not Active</option>
+                 </select>  
+             <p>
         <strong style=font-family:courier;>Service Location  :</strong>
-        <select class="custom-select" name="seller_id">
-        <option selected disabled>Select location</option>
-            @foreach ($seller as $id => $location )
+        <select class="custom-select" name="service_location">
+        <option selected disabled>select service location...</option>
+          <option >Alor Gajah</option>
+          <option >Masjid Tanah</option>
+          <option >Melaka Tengah</option>
+          <option >Jasin</option>
+        </select>  
+            <P>
+            {{-- @foreach ($seller as $id => $location )
+            <option></option>
                     <option
                         value="{{$id}}" {{ (isset($ervices['seller_id']) && $services['seller_id'] == $id) ? ' selected' : '' }}>{{$location}}</option>
-                @endforeach
+                @endforeach --}}
       </select><p><p>
+
+
       <p><p>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <p><p><button type="submit" class="btn btn-primary"onclick="return confirm('Sure want to Submit')" >Submit</button>

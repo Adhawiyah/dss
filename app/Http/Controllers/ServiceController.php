@@ -13,26 +13,31 @@ class ServiceController extends Controller
   
     public function index()
     {
-        $services = Service::with('seller')
-        ->get(); //edited
+        $services =Service::all();
+        //$services = Service::with('seller')->get(); //edited
         return view('services.index', compact('services'));
     }
 
     public function create()
     {
-        $seller = Seller::pluck('location','id');
+        // $seller = Seller::pluck('location','id');
 
-        return view('services.create',compact('seller'));
+        return view('services.create');
     }
 
     public function store(Request $request)
     {      
-        $services = Service::create([
+       //$seller=auth('seller')->user();
+         $services = Service::create([
             'service_type'=>$request->service_type,
-            'service_status'=>$request->service_status,
-            'seller_id' => $request->seller_id,
-        ]);
+             'service_status'=>$request->service_status,
+             'service_location'=>$request->service_location,
+             //'seller_id' => $request->seller_id,
 
+             'seller_id' => auth('seller')->user()->id,
+         ]);
+
+            // Service::create($request->all());
         return redirect()->route('services.index')->with('Success!');
     }
 
@@ -43,8 +48,8 @@ class ServiceController extends Controller
 
     public function edit(Service $service)
     {
-        $seller = Seller::pluck('location','id');
-        return view('services.edit', compact('service','seller'));
+        //$seller = Seller::pluck('location','id');
+        return view('services.edit', compact('service'));
     }
 
     public function update(Request $request, Service $service)

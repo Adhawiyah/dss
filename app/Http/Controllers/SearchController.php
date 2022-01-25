@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Search;
+use App\Service;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -12,9 +13,17 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        
+        $serviceLoc = isset($request->service_location) ? $request->service_location : null ;
+        $serviceTyp = isset($request->service_type) ? $request->service_type : null ;
+        info($serviceLoc);
+        info($serviceTyp);
+        
+        $services = Service::where('service_type','LIKE','%'.$serviceTyp.'%')->where('service_location','LIKE','%'.$serviceLoc.'%')->get();
+        info($services);
+        return view('customers.search',compact('services'));
     }
 
     /**
@@ -83,15 +92,5 @@ class SearchController extends Controller
         //
     }
 
-    public function search ()  //Search function to search service type and location (table service & seller)
-    {
-        $service = Service::pluck('service_type','id');
-        $seller = Seller::pluck('location','id');
-
-        $search_text = $_GET['query'];
-        $service = Service::where('service_type','LIKE','%'.$search_text.'%')->get();
-        $seller = Seller::where('location','LIKE','%'.$search_text.'%')->get();
-   
-        return view('customers.search',compact('service','seller'));
-    }
+    
 }

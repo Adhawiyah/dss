@@ -13,37 +13,6 @@
     @endif
   <!-- End Success Notification -->
 
-   <!--SEARCH section-->
-
-   <div class="panel panel-primary">
-    <div class="panel-heading">
-        <h2 class="text-center" style=color:white;>Let's find service you need </h2>
-    </div>
-
-    <div class="panel-body">
-        <div class="col-md-3">
-            <select class="form-control" name="service_type" id="service_type">
-                <option selected="false">
-                    Service type...
-                </option>
-            </select>
-        </div>
-        
-        <div class="col-md-6">
-            <select class="form-control" name="service_location" id="service_location">
-                <option selected="false">
-                    Location...
-                </option>
-            </select>
-        </div>
-
-        <div class="col-md-3">
-            <button class="btn btn-primary rounded" type="submit" id="search" name="search">Search<i class=fa fa-search></i>
-            </button>
-        </div>
-    </div>
-</div>
-     <!-- END SEARCH section-->
 
   <section style="background-color:#80ced6;">
   <div class="container py-5" >
@@ -68,25 +37,7 @@
                 <p class="mb-0">Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('customer')->id()}}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('customer')->id()}}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Phone Number</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('customer')->id()}}</p>
+                <p class="text-muted mb-0">{{$customer->cust_name}}</p>
               </div>
             </div>
             <hr>
@@ -95,16 +46,35 @@
                 <p class="mb-0">Username</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('customer')->id()}}</p>
+                <p class="text-muted mb-0">{{$customer->cust_username}}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">E-mail</p>
+                <p class="mb-0">Address</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{Auth::guard('customer')->id()}}</p>
+                <p class="text-muted mb-0">{{$customer->cust_address}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone Number</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{$customer->cust_phoneNo}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+            <hr>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{$customer->cust_email}}</p>
               </div>
             </div>
           </div>

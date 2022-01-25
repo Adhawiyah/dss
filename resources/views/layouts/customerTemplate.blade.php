@@ -82,18 +82,24 @@
              <i class="far fa-user-circle"></i></i>
                  <p> Profile</p>
              </a>  
-            </li>
-            
+            </li> 
             <li>
                 <li class="nav-item">
-            <a href="{{route('customers.profile',Auth::guard('customer')->id())}}"  class="nav-link">  
-               {{__('View Profile')}}
-            </a>   
+            <a href="{{route('customers.profile',Auth::guard('customer')->id())}}"  class="nav-link">   </a>   
             </li>
+            <li>
+              <li class="nav-item">
+             <a href="{{route('customers.profile',Auth::guard('customer')->id())}}" class="nav-link">
+              <i class=#></i></i>
+              <p>View Profile </p>
+              </a>
+              </li>
+               <br>
+          <li class="nav-item">
               <br>
             <li>
               <li class="nav-item">
-             <a href=#  class="nav-link">
+             <a href="{{route('search.index')}}" class="nav-link">
               <i class="fas fa-search"></i></i>
               <p>Search </p>
               </a>

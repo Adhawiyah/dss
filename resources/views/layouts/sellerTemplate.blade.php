@@ -78,19 +78,18 @@
           <li>
           <li class="nav-item"> 
           <a href="{{ route('sellers.index') }}"  class="nav-link">
-          <i class="far fa-user-circle"></i>
               <p>Profile </p>
           </a>
           </li>
-          <br>
-
+          
           <li>  <!--23hb -->
-                <li class="nav-item">
+                <li class="nav-item"> 
             <a href="{{route('sellers.profile',Auth::guard('seller')->id())}}"  class="nav-link">  
+              <i class="far fa-user-circle"></i>
                {{__('View Profile')}}
             </a>   
             </li>
-
+              <br>
           <li>
             <li class="nav-item">
           <a href="{{ route('services.index') }}"  class="nav-link">
