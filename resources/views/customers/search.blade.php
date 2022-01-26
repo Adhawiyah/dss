@@ -17,8 +17,10 @@
     <div class="panel-body">
         <div class="col-md-3">
             <select class="form-control" name="service_type" id="service_type"> 
+                <option selected="false">service type... </option>
                 <option >Grab</option>
                 <option >Food Catering </option>
+                <option >Laundry</option>
                 <option >Nursing </option>
                 <option >Skincare product</option>
             </select>
@@ -26,7 +28,7 @@
         
         <div class="col-md-6">
             <select class="form-control" name="service_location" id="service_location">
-                <option selected="false">Location... </option>
+                <option selected="false">location... </option>
                 <option >Alor Gajah</option>
                 <option >Jasin </option>
                 <option >Masjid Tanah </option>
@@ -43,7 +45,7 @@
 </form>
      <!-- END SEARCH section-->
 
-     <!-- Start List seller name, service_type, service_status,service_location -->
+     <!-- Start List-->
 
     <div class="row" style="background-color: #92A9BD;">
     <div class="col-sm-12">   

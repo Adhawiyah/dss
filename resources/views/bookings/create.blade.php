@@ -2,7 +2,7 @@
 @section('content')
 <!-- REFER YG ADD BOOKING-->
       <div class="page-wrapper">
-        <div class="content container-fluid">
+        <div class="content container-fluid" style="background-color: #92A9BD;">
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
@@ -19,50 +19,43 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Username:</label>
-                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="sel1" name="cust_username" value="{{ old('cust_username') }}">
+                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="cust_username" name="cust_username" value="{{ old('cust_username') }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label> Phone Number:</label>
-                                    <input type="text" class="form-control @error('cust_phoneNo') is-invalid @enderror" id="sel1" name="cust_phoneNo" value="{{ old('cust_phoneNo') }}">
+                                    <label> Phone Number</label>
+                                    <input type="text" class="form-control @error('cust_phoneNo') is-invalid @enderror" id="cust_phoneNo" name="cust_phoneNo" value="{{ old('cust_phoneNo') }}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Address </label>
+                                    <input type="text" class="form-control @error('cust_address') is-invalid @enderror" id="cust_address" name="cust_address" value="{{ old('cust_address') }}">
+                                    
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Service Type</label>
-                                    <select class="form-control @error('name') is-invalid @enderror" id="sel2" name="service_type" value="{{ old('service_type') }}">
-                                        <option selected disabled> --Service Type-- </option>
-                                        @foreach ($ser as $services ) <!--refer bookingController/data auto insert in this after BOOK kat Search page -->
-                                        <option value="{{ $services->service_type}}">{{ $services->service_type }}</option>   
-                                        @endforeach
-                                    </select>
+                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type') }}">    
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label> Address :</label>
-                                    <input type="textarea" class="form-control @error('cust_address') is-invalid @enderror" id="sel1" name="cust_address">
+                                    <label> Service location</label>
+                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location') }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Location</label>
-                                    <select class="form-control @error('name') is-invalid @enderror" id="sel3" name="location" value="{{ old('location') }}">
-                                        <option selected disabled> --Location-- </option>
-                                        @foreach ($sel as $sellers) <!-- refer bookingController/ data auto insert in this after BOOK kat Search page -->
-                                        <option value="{{ $sellers->location}}">{{ $sellers->location }}</option>
-                                      
-                                        <!--<option value="{{ $sellers->location}}">Alor Gajah</option>
-                                        <option value="{{ $sellers->location}}">Jasin</option>
-                                        <option value="{{ $sellers->location}}">Merlimau</option>
-                                        <option value="{{ $sellers->location}}">Masjid Tanah</option> -->
-                                        @endforeach
-                                    </select>
+                                    <label> Booking status</label>
+                                    <input type="textarea" class="form-control @error('cust_address') is-invalid @enderror" id="booking_status" name="cust_address">
                                 </div>
                             </div>
 
@@ -76,16 +69,19 @@
                             </div>      
                         </div>
                     </div>
+                   
                 </div>
                 <p><p>
                   <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                      <p><p><button type="submit" class="btn btn-primary"onclick="return confirm('Sure want to Submit')" >Submit</button>
         
-                       <a class="btn btn-primary" href="{{ route('bookings.index') }}"> Back</a>
-                   </div>
-            </form>
+                       <a class="btn btn-primary" href="{{ route('search.index') }}"> Back</a>
+                   </div>         
+            </form> 
         </div>
+       
     </div>
+    
 </div>
 
 @endsection

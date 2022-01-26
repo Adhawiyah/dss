@@ -1,47 +1,42 @@
 @extends('layouts.customerTemplate')  
 @section('content')
 
-<div>
-    <a style="margin: 19px;" href="{{ route('bookings.create') }}" class="btn btn-primary">Create Booking</a>
-    </div>  </br>
-
-<div class="row">
-<div class="col-sm-12">  
-  <h3>List of Bookings</h3><br>
-  <table class="table table-striped">
+<h3>View list of Bookings</h3><br>
+<div class="row" style="background-color: #92A9BD;">
+<div class="col-sm-12">   
+  <table class="table table-striped" style="background-color: #D3DEDC;">
     <thead>
-        <tr> 
-            <th>Id</th>
-            <th>Service type</th>
-            <th>Location</th>
-            <th>Date</th> 
-            <th>Status</th>  
-            <th colspan = 6>Action</th>
+        <tr> <!-- Services here -->
+          <th>Id</th>  
+           <th>Service type</th></br>
+           <th>Service location</th> 
+           <th>Service status</th>   
+          <th colspan = 6>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($bookings as $booking)
-        <tr> 
-            <td>{{$booking->id}}</td>
-            <td>{{$booking->id}}</td>
-            <td>{{$booking->date}}</td>
-            <td>{{$booking->location}}</td>
-            <td>{{$booking->booking_status}}</td>  
-            <!-- Buttons-->
+        @foreach($bookings as $b)
+        <tr>
+          <td>{{$b->id}}</td>
+          <td>{{$b->service_type}}</td>
+          <td>{{$b->service_location}}</td>
+          <td>{{$b->date}}</td>
+          <td>{{$b->booking_status}}</td>  
             <td>
-                <a href="{{ route('bookings.edit',$s->id)}}" class="btn btn-primary">Edit</a>
-            </td>   
+                <a href="{{ route('bookings.edit',$b->id)}}" class="btn btn-primary">Edit</a>
+            </td>
             <td>
-                <form method="POST" action="{{ route('bookings.destroy',$booking->id)}}">   
+                <form action="{{route('bookings.destroy', $s->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit" value="delete">Delete</button>
+                  <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
-            </td>    
+            </td>
         </tr>
         @endforeach
     </tbody>
   </table>
 <div>
 </div>
+
 @endsection

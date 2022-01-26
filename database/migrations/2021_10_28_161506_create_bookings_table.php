@@ -16,8 +16,7 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');      
             $table->string('booking_status');
-            $table->string('date');
-            $table->string('location');   //nk buat drop down locations in create booking
+            $table->string('date');  
             $table->timestamps();
         });
     }

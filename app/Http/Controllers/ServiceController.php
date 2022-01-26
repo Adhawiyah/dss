@@ -1,20 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Controllers\controller;
 use App\Service;
+use App\Seller;
 use Illuminate\Http\Request;
 use DB;
-use App\Seller;
+
 
 class ServiceController extends Controller
 {
   
     public function index()
     {
+        
         $services =Service::all();
-        //$services = Service::with('seller')->get(); //edited
+        //->where('seller_id', auth()->user()->id)
+        
+        
+
         return view('services.index', compact('services'));
     }
 

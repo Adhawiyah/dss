@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Service;
+use App\Customer;
+use App\Seller;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
+// use DB;
 
 class BookingController extends Controller
 {
@@ -28,10 +32,10 @@ class BookingController extends Controller
     public function create()
     {
         // create booking
-        $sel = DB::table('sellers')->get();
-        $ser = DB::table('services')->get();
-        $cus = DB::table('customers')->get();
-        return view('bookings.create',compact('sel','ser','cus'));
+         $seller = DB::table('sellers')->get();
+         $service = DB::table('services')->get();
+         $customer = DB::table('customers')->get();
+        return view('bookings.create',compact('seller','service','customer'));
     }
 
     /**
@@ -42,18 +46,20 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $request->validate([
-            'booking_status'=>'required',
-            'date'=>'required',
-            'location'=>'required',
-        ]);
-
-        $bookings = Booking::create([
+         $booking = Booking::create([
+            'service_id' => auth('service')->user()->id,
+            'seller_id' => auth('seller')->user()->id,
+            'cust_id' => auth('customer')->user()->id,
+            
+            'cust_username'=>$request->cust_username,
+            'cust_phoneNo'=>$request->cust_phoneNo,
+             'cust_address'=>$request->cust_address,
+             'booking_status'=>$request->booking_status,
             'booking_status'=>$request->booking_status,
             'date'=>$request->date,
-            'location'=>$request->location,
-        ]);
+            
+            
+         ]);
 
         return redirect()->route('bookings.index')->with('Success! booking has been created');
     }
@@ -71,7 +77,7 @@ class BookingController extends Controller
         $bookings = Booking::find($id);
 
         // show the view and pass the shark to it
-        return View::make('bookings.show')->with('Show details');
+        //return View::make('bookings.show')->with('Show details');
     }
 
     /**
@@ -107,7 +113,7 @@ class BookingController extends Controller
         $bookings->booking_status = $request->booking_status;
         $bookings->date = $request->date;
         $bookings->location = $request->location;
-        $services->save();
+        
     }
 
     /**
@@ -121,8 +127,10 @@ class BookingController extends Controller
         // BAIKI YANG NII
         $bookings=Booking::find($id);
         $bookings->delete();
-
-        return redirect()->route('bookings.index')->with('Success deleted');
+        {
+            return redirect()->route('bookings.index')->with('Success deleted');
+        }
+        
     }
 
 }

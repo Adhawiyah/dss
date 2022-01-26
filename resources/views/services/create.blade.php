@@ -31,7 +31,7 @@
           </div> --}}
           
           <br>
-                 <strong style=font-family:courier;>Service Type  :</strong>
+                 <strong >Service Type  :</strong>
                  <select class="custom-select" name="service_type">
                  <option selected disabled>select service type...</option>
                  <option >Food Catering</option>
@@ -39,16 +39,17 @@
                      <option >Nursing</option>
                       <option >Laundry</option>
                       <option >Skincare product</option>
-                 </select>  
+                 </select>  <br><br>
                  <p>
-                 <strong style=font-family:courier;>Service Status  :</strong>
+                 <strong >Service Status  :</strong>
                  <select class="custom-select" name="service_status">
                  <option selected disabled>select service status...</option>
                  <option >Active</option>
                  <option >Not Active</option>
-                 </select>  
+                 </select>   <br>
              <p>
-        <strong style=font-family:courier;>Service Location  :</strong>
+              
+        <strong >Service Location  :</strong>
         <select class="custom-select" name="service_location">
         <option selected disabled>select service location...</option>
           <option >Alor Gajah</option>
