@@ -8,8 +8,9 @@
     <thead>
         <tr> <!-- Services here -->
           <th>Id</th>  
-           <th>Service type</th></br>
-           <th>Service location</th> 
+           <th>Service type</th>
+           <th>Service location</th>
+           <th>Date</th> 
            <th>Service status</th>   
           <th colspan = 6>Actions</th>
         </tr>

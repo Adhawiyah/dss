@@ -7,7 +7,7 @@ use App\Service;
 use App\Customer;
 use App\Seller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 // use DB;
 
 class BookingController extends Controller
@@ -29,13 +29,17 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        // create booking
-         $seller = DB::table('sellers')->get();
-         $service = DB::table('services')->get();
-         $customer = DB::table('customers')->get();
-        return view('bookings.create',compact('seller','service','customer'));
+        $service = Service::whereId($request->input('service'))->firstOrFail();
+        $customer = auth()->guard('customer')->user();
+
+        return view('bookings.create',compact('service','customer'));
+       
+        //  $seller = DB::table('sellers')->get();
+        //  $service = DB::table('services')->get();
+        //  $customer = DB::table('customers')->get();
+        
     }
 
     /**
@@ -54,8 +58,9 @@ class BookingController extends Controller
             'cust_username'=>$request->cust_username,
             'cust_phoneNo'=>$request->cust_phoneNo,
              'cust_address'=>$request->cust_address,
-             'booking_status'=>$request->booking_status,
-            'booking_status'=>$request->booking_status,
+             'service_type' =>$request->service_type,
+             'service_location' =>$request->service_location,
+             'booking_status'=>$request->booking_status,  
             'date'=>$request->date,
             
             
@@ -72,7 +77,6 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        
         // get the booking
         $bookings = Booking::find($id);
 

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\SellerAuthController;
@@ -43,6 +43,7 @@ Route::post('customer/checkReq', [CustomerAuthController::class, 'custCheckReq' 
 Route::get('customer/profile', [CustomerAuthController::class, 'custProfile' ]); 
 Route::get('/customer/{id}',[CustomerAuthController::class, 'profile' ])->name('customers.profile');
 
+//Route::get('/booking/create', [BookingController::class,'create'])->name('bookings.create');
 
 Route::get('seller/login', [SellerAuthController::class, 'login' ]); 
 Route::get('seller/register', [SellerAuthController::class, 'register' ]);

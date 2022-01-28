@@ -11,7 +11,7 @@
                 </div>
             </div>
             <form action="{{ route('bookings.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
+                @csrf  
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row formtype">
@@ -19,43 +19,42 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Username:</label>
-                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="cust_username" name="cust_username" value="{{ old('cust_username') }}">
+                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="cust_username" name="cust_username" value="{{ old('cust_username',$customer->cust_username) }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Phone Number</label>
-                                    <input type="text" class="form-control @error('cust_phoneNo') is-invalid @enderror" id="cust_phoneNo" name="cust_phoneNo" value="{{ old('cust_phoneNo') }}">
+                                    <input type="text" class="form-control @error('cust_phoneNo') is-invalid @enderror" id="cust_phoneNo" name="cust_phoneNo" value="{{ old('cust_phoneNo',$customer->cust_phoneNo) }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Address </label>
-                                    <input type="text" class="form-control @error('cust_address') is-invalid @enderror" id="cust_address" name="cust_address" value="{{ old('cust_address') }}">
-                                    
+                                    <input type="text" class="form-control @error('cust_address') is-invalid @enderror" id="cust_address" name="cust_address" value="{{ old('cust_address',$customer->cust_address) }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Service Type</label>
-                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type') }}">    
+                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type',$customer->service_type) }}">    
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Service location</label>
-                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location') }}">
+                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location',$customer->service_location) }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Booking status</label>
-                                    <input type="textarea" class="form-control @error('cust_address') is-invalid @enderror" id="booking_status" name="cust_address">
+                                    <input type="textarea" class="form-control @error('booking_status') is-invalid @enderror" id="booking_status" name="booking_status">
                                 </div>
                             </div>
 

@@ -31,7 +31,7 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>No.</th>
+            <th>Id.</th>
             <th>Seller Name</th>
             <th>Service type</th>
             <th>Location</th>
@@ -40,23 +40,17 @@
         </tr>
     </thead>
     <tbody>
-         @foreach($services as $service)
-            <tr> 
-             <td>{{$service->id}}</td>
-             <td>{{$service->seller_name}}</td>
-             <td>{{$service->service_type}}</td>
-             <td>{{$service->service_location}}</td>
-             <td>{{$service->service_status}}</td>
-            <td> <!-- insert BOOK button here -->
-                <form  action="{{ route('services.destroy',$service->id)}}" method="POST">  
-                  
-                  <a class="btn btn-info" href="{{ route('services.edit', $service->id) }}">BOOK</a>
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit" value="delete">Delete</button>
-                </form>
-            </td>      
-        </tr>
+         @foreach($services as $s)
+         <tr> 
+             <td>{{$s->id}}</td>
+             <td>{{$s->seller_name}}</td>
+             <td>{{$s->service_type}}</td>
+             <td>{{$s->service_location}}</td>
+             <td>{{$s->service_status}}</td>
+             <td>  
+                <a href="{{route('bookings.create',['service'=>$s]) }}" class="btn btn-primary">BOOK</a>   
+            </td> 
+         </tr>
         @endforeach
 
     </tbody>
