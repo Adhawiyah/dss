@@ -33,28 +33,28 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Address </label>
-                                    <input type="text" class="form-control @error('cust_address') is-invalid @enderror" id="cust_address" name="cust_address" value="{{ old('cust_address',$customer->cust_address) }}">
+                                    <input type="text" class="form-control @error('cust_address') is-invalid @enderror" id="cust_address" name="cust_address" value="{{ old('cust_address', $customer->cust_address) }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Service Type</label>
-                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type',$customer->service_type) }}">    
+                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type', $service->service_type) }}">    
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Service location</label>
-                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location',$customer->service_location) }}">
+                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location', $service->service_location) }}">
                                 </div>
                             </div>
 
+                            {{-- Booking status --}}
                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label> Booking status</label>
-                                    <input type="textarea" class="form-control @error('booking_status') is-invalid @enderror" id="booking_status" name="booking_status">
+                                <div class="form-group">   
+                                    <input type="textarea" class="form-control @error('booking_status') is-invalid @enderror" id="booking_status" name="booking_status" hidden value="pending">
                                 </div>
                             </div>
 

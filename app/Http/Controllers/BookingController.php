@@ -31,9 +31,9 @@ class BookingController extends Controller
      */
     public function create(Request $request)
     {
-        $service = Service::whereId($request->input('service'))->firstOrFail();
+        $service = Service::whereId($request->input('service'))->first();
         $customer = auth()->guard('customer')->user();
-
+        
         return view('bookings.create',compact('service','customer'));
        
         //  $seller = DB::table('sellers')->get();

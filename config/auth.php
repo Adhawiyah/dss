@@ -50,9 +50,13 @@ return [
             'driver' => 'session',
             'provider' => 'customers',
         ],
-        'seller' => [                   //
+        'seller' => [                   
             'driver' => 'session',
             'provider' => 'sellers',
+        ],
+        'service' => [                   //adha tmbh 29hb
+            'driver' => 'session',
+            'provider' => 'services',
         ],
     ],
 
@@ -87,6 +91,12 @@ return [
          'sellers' => [
             'driver' => 'eloquent',
             'model' => App\Seller::class,
+        ],
+
+        //adha tmbh 29hb
+        'services' => [
+            'driver' => 'eloquent',
+            'model' => App\Service::class,
         ],
     ],
 

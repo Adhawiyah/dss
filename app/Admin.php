@@ -10,8 +10,11 @@ class Admin extends Model
     protected $table = 'admins';
 
     protected $fillable = [
-        'admin_username', 'password'
+        'admin_username', 'password','seller_name','service_status'
     ];
 
+    public function service(){
+        return $this->belongsTo(Service::class, 'service_id' );
+     }
     
 }

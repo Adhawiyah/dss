@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Seller;
+use App\Service;
 use Illuminate\Support\Facades\Hash;
 use App\Admin;
 
@@ -33,19 +34,21 @@ class AdminAuthController extends Controller
         }
     }
 
-    function adminProfile(){
+    function adminProfile()
+    {
 
+        $service = Service::all();
         $seller=Seller::all();
-        return view('admins.profile',compact('seller'));
+        return view('admins.profile',compact('service','seller'));
     }
 
     public function destroy(Admin $admin)  
     {
         
         $admin->delete();
-        
-        return redirect('admin.profile')->with('Success', 'Service deleted!');
-    }
+          return redirect('admin.profile')->with('Success', 'Seller deleted!');
 
+        // return redirect('admin.profile')->with('Success', 'Service deleted!');
+    }
 
 }

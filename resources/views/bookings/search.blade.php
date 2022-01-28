@@ -48,7 +48,7 @@
              <td>{{$s->service_location}}</td>
              <td>{{$s->service_status}}</td>
              <td>  
-                <a href="{{route('bookings.create',['service'=>$s]) }}" class="btn btn-primary">BOOK</a>   
+                <a href="{{route('bookings.create',['service' => $s]) }}" class="btn btn-primary">BOOK</a>   
             </td> 
          </tr>
         @endforeach
