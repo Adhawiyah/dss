@@ -18,11 +18,14 @@
         <div class="col-md-3">
             <select class="form-control" name="service_type" id="service_type"> 
                 <option selected="false">service type... </option>
-                <option >Grab</option>
+                <option >Car wash</option>
+                <option >Eldercare</option>
                 <option >Food Catering </option>
+                <option >Grab</option>
+                <option >House cleaning</option>
                 <option >Laundry</option>
                 <option >Nursing </option>
-                <option >Skincare product</option>
+                <option >Skincare product</option>  
             </select>
         </div>
         

@@ -1,12 +1,12 @@
 @extends('layouts.customerTemplate')  
 @section('content')
 
-<h3>View list of Bookings</h3><br>
+<h3 align="center" style="color: #4a8eca;">View list of Bookings</h3><br>
 <div class="row" style="background-color: #92A9BD;">
 <div class="col-sm-12">   
   <table class="table table-striped" style="background-color: #D3DEDC;">
-    <thead>
-        <tr> 
+    <thead >
+        <tr align="center"> 
           <th>Id</th>  
            <th>Service type</th>
            <th>Service location</th>
@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         @foreach($bookings as $b)
-        <tr>
+        <tr align="center">
           <td>{{$b->id}}</td>
           <td>{{$b->service_type}}</td>
           <td>{{$b->service_location}}</td>

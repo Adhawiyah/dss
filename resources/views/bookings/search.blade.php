@@ -30,7 +30,7 @@
 
 <table class="table table-bordered">
     <thead>
-        <tr>
+        <tr align="center">
             <th>Id.</th>
             <th>Seller Name</th>
             <th>Service type</th>
@@ -41,7 +41,7 @@
     </thead>
     <tbody>
          @foreach($services as $s)
-         <tr> 
+         <tr align="center"> 
              <td>{{$s->id}}</td>
              <td>{{$s->seller_name}}</td>
              <td>{{$s->service_type}}</td>

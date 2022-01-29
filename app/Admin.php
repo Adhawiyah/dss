@@ -17,4 +17,8 @@ class Admin extends Model
         return $this->belongsTo(Service::class, 'service_id' );
      }
     
+     public function seller(){
+        return $this->belongsTo(Seller::class, 'seller_id' );
+     }
+    
 }

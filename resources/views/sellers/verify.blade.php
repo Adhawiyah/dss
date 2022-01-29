@@ -1,13 +1,13 @@
 @extends('layouts.sellerTemplate') 
 @section('content')
 
-<h3>Verify your customer's booking! </h3>
-<br>
+<h2 align="center" style="color:rgb(71, 107, 107);">Verify your customer's booking</h2>
+<br><br>
 <div class="row" style="background-color: #92A9BD;">
 <div class="col-sm-12" >   
-  <table class="table table-striped" style="background-color: #D3DEDC;">
-    <thead>
-        <tr> <!-- Services here -->
+  <table class="table table-striped" style="background-color: #D3DEDC;" >
+    <thead style="background-color: rgb(102, 153, 153);">
+        <tr align="center" style="color: azure"> 
           <th>Id</th>  
            <th>Customer Name</th>
            <th>Phone No.</th> 

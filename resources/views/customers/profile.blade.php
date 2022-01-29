@@ -11,7 +11,7 @@
         <p>{{$message}}</p>
       </div>
     @endif
-  <!-- End Success Notification -->
+  <!-- End Success Notification  -->
 
 
   <section style="background-color:#80ced6;">
@@ -21,7 +21,7 @@
         <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">User</a></li>
+            <li class="breadcrumb-item"><a href="#">Customer</a></li>
             <li class="breadcrumb-item active" aria-current="page">Customer Profile</li>
           </ol>
         </nav>

@@ -48,7 +48,36 @@ class AdminAuthController extends Controller
         $admin->delete();
           return redirect('admin.profile')->with('Success', 'Seller deleted!');
 
-        // return redirect('admin.profile')->with('Success', 'Service deleted!');
+    }
+
+
+    //verify register seller (based on serialNo)
+    public function verify()  
+    {
+        $seller=Seller::all();
+        return view('admins.verify',compact('seller'));
+    }
+
+    public function approved($id)
+    {
+        $seller=Seller::find($id);
+
+        $seller->seller_status='approved';
+
+        $seller->save();
+
+        return redirect()->back();
+    }
+
+    public function rejected($id)
+    {
+        $seller=Seller::find($id);
+
+        $seller->seller_status='rejected';
+
+        $seller->save();
+
+        return redirect()->back();
     }
 
 }

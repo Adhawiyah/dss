@@ -27,8 +27,8 @@ Route::get('/home', 'HomeController@index')->name('home');
  Route::resource('search','SearchController');
 
  //Booking
- Route::put('/bookings/{booking}',[BookingController::class, 'edit' ])->name('bookings.edit');
- Route::put('/bookings/{booking}',[BookingController::class, 'update' ])->name('bookings.update');
+//  Route::put('/bookings/{booking}',[BookingController::class, 'edit' ])->name('bookings.edit');
+//  Route::put('/bookings/{booking}',[BookingController::class, 'update' ])->name('bookings.update');
 
 //Admin 
 Route::get('admin/index', 'AdminController@index')->name('home');
@@ -57,8 +57,11 @@ Route::get('seller/profile', [SellerAuthController::class, 'profile' ]);
 Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
 
 //verify booking
-// Route::get('seller/verify', [SellerAuthController::class, 'verify' ]); 
-
-Route::get('/verify', [SellerAuthController::class, 'verify' ])->name('sellers.verify'); 
+ Route::get('/seller/verify', [SellerAuthController::class, 'verify' ])->name('sellers.verify'); 
 Route::get('/approved/{id}', [SellerAuthController::class, 'approved' ]); 
 Route::get('/rejected/{id}', [SellerAuthController::class, 'rejected' ]); 
+
+//Verify seller profile
+  Route::get('admin/verify', [AdminAuthController::class, 'verify' ])->name('admins.verify'); 
+  Route::get('/approved/{id}', [AdminAuthController::class, 'approved' ]); 
+  Route::get('/rejected/{id}', [AdminAuthController::class, 'rejected' ]); 

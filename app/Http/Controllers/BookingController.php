@@ -20,7 +20,8 @@ class BookingController extends Controller
     public function index()
     {
         //
-        $bookings = Booking::all();
+        $bookings=Booking::where('cust_id', auth('customer')->user()->id)->get();
+       
         return view('bookings.index', compact('bookings'));
     }
 
@@ -88,12 +89,10 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Booking $booking)
     {
-        //CHECK HERE (error)
-        $bookings = Booking::find($id);
-    
-        return view('bookings.edit', compact('bookings'));
+        
+        return view('bookings.edit', compact('booking'));
     }
 
     /**
@@ -103,10 +102,9 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)  //(Request $request, $id)
+    public function update(Request $request,Booking $booking)  //(Request $request, $id)
     {
-        //
-        $bookings = Booking::find($id);
+
         $request->validate([
 
             // 'cust_username'=>'required',
@@ -119,7 +117,7 @@ class BookingController extends Controller
         ]);
           
        // $bookings->booking_status = $request->booking_status;
-         $bookings->date = $request->date;
+        //  $booking->date = $request->date;
          return redirect()->route('bookings.index')->with('Success', 'Booking has been edited!');;
     }
 

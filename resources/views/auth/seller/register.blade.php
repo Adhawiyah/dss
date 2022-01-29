@@ -98,7 +98,12 @@
                                     <span class="text-danger">@error('seller_phoneNo'){{ $message }} @enderror</span>
                                 </div>
                             </div>
-
+                                {{-- Seller status- pending before admin approved! --}}
+                            <div class="col-md-4"> 
+                                <div class="form-group">   
+                                    <input type="textarea" class="form-control @error('seller_status') is-invalid @enderror" id="seller_status" name="seller_status" hidden value="pending">
+                                </div>
+                            </div>
 
 
                             <div class="form-group row">

@@ -86,10 +86,17 @@
           <br>
           <li>
             <li class="nav-item">
-          <a href="#" class="nav-link">
-          <i class="far fa-user-circle"></i>
-              <p >List of Sellers</p> 
+          <a href="{{ route('admins.verify') }}" class="nav-link">
+          <i class="far fa-id-badge"></i>
+              <p >Verify seller</p> 
           </a>
+          <br>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="far fa-user-circle"></i>
+                <p >List of Sellers</p> 
+            </a>
+
           <br>
           <li class="nav-item">
             <a href="{{ route('logout') }}"

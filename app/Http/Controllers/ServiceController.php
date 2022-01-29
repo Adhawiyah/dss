@@ -14,8 +14,7 @@ class ServiceController extends Controller
     public function index()
     {
         
-        $services =Service::all();
-        //->where('seller_id', auth()->user()->id)
+        $services =Service::where('seller_id', auth('seller')->user()->id)->get();
         
         
 

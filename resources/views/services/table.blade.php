@@ -9,8 +9,8 @@
 <div class="row" style="background-color: #92A9BD;">
 <div class="col-sm-12">   
   <table class="table table-striped" style="background-color: #D3DEDC;">
-    <thead>
-        <tr> <!-- Services here -->
+    <thead style="background-color: rgb(117, 163, 163);">
+        <tr align="center" style="color: azure"> 
           <th>ID</th>  
            <th>Service Type</th></br>
            <th>Location</th> 
@@ -20,7 +20,7 @@
     </thead>
     <tbody>
         @foreach($services as $s)
-        <tr>
+        <tr align="center">
             <td>{{$s->id}}</td>  
             <td>{{$s->service_type}}</td>
             <td>{{$s->service_location}}</td>  <!-- need to use service_location sini -->

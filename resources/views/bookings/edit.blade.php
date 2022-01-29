@@ -11,8 +11,9 @@
                     </div>
                 </div>
             </div>
-            <form action="{{ route('bookings.update') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('bookings.update',$booking->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf  
+                @method('PUT')
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row formtype">
@@ -27,14 +28,14 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Service Type</label>
-                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ $service->service_type }}">
+                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ $booking->service_type }}">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Service Location </label>
-                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ $service->service_location }}">
+                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ $booking->service_location }}">
                                 </div>
                             </div>
                             
@@ -43,7 +44,7 @@
                               <div class="form-group">
                                   <label>Date</label>
                                   <div class="cal-icon">
-                                      <input type="date" class="form-control datetimepicker @error('date') is-invalid @enderror" name="date">
+                                      <input type="date" class="form-control datetimepicker @error('date') is-invalid @enderror" name="date" value="{{$booking->date}}">
                                   </div>
                               </div>
                           </div>      

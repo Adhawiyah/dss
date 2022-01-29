@@ -84,27 +84,36 @@
              </a>  
             </li> 
             <li>
-                <li class="nav-item">
-            <a href="{{route('customers.profile',Auth::guard('customer')->id())}}"  class="nav-link">   </a>   
-            </li>
+              <li class="nav-item">
+                 <a href="{{route('customers.profile',Auth::guard('customer')->id())}}"  class="nav-link">   </a>   
+              </li>
             <li>
               <li class="nav-item">
-             <a href="{{route('customers.profile',Auth::guard('customer')->id())}}" class="nav-link">
-              <i class=#></i></i>
-              <p>View Profile </p>
-              </a>
+                  <a href="{{route('customers.profile',Auth::guard('customer')->id())}}" class="nav-link">
+                   <i class=#></i></i>
+                  <p>View Profile </p>
+                  </a>
               </li>
-               <br>
+               
           <li class="nav-item">
               <br>
             <li>
               <li class="nav-item">
-             <a href="{{route('search.index')}}" class="nav-link">
-              <i class="fas fa-search"></i></i>
-              <p>Search </p>
-              </a>
+                  <a href="{{route('search.index')}}" class="nav-link">
+                  <i class="fas fa-search"></i></i>
+                  <p>Search </p>
+                  </a>
               </li>
                <br>
+
+               <li class="nav-item">
+                <a href="{{route('bookings.index')}}" class="nav-link">
+                <i class="far fa-edit"></i></i>
+                <p>List Booking </p>
+                </a>
+            </li>
+             <br>
+
           <li class="nav-item">
             <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
@@ -152,14 +161,14 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+  {{-- <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Training.com</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.0
     </div>
-  </footer>
+  </footer> --}}
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
