@@ -17,7 +17,6 @@ class AlterAddSellerIdColumnInBookingsTable extends Migration
             //
             $table->unsignedInteger('seller_id')->nullable();
             $table->foreign('seller_id')->references('id')->on('sellers')->onDelete('cascade');
-
         });
     }
 

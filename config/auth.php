@@ -46,7 +46,7 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-        'customer' => [                     //tmbh yg ni
+        'customer' => [                     
             'driver' => 'session',
             'provider' => 'customers',
         ],
@@ -54,7 +54,7 @@ return [
             'driver' => 'session',
             'provider' => 'sellers',
         ],
-        'service' => [                   //adha tmbh 29hb
+        'service' => [                   //add here 29hb
             'driver' => 'session',
             'provider' => 'services',
         ],
@@ -93,7 +93,7 @@ return [
             'model' => App\Seller::class,
         ],
 
-        //adha tmbh 29hb
+        //add here 29hb
         'services' => [
             'driver' => 'eloquent',
             'model' => App\Service::class,

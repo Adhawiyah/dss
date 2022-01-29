@@ -19,23 +19,28 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //ALL ROUTES 
  Route::resource('customers','CustomerController');
-Route::resource('sellers','SellerController');
+ Route::resource('sellers','SellerController');
  Route::resource('services','ServiceController');
  Route::resource('bookings','BookingController');
  Route::resource('admins','AdminAuthController');
  Route::resource('customers','CustomerAuthController');
  Route::resource('search','SearchController');
 
+ //Booking
+ Route::put('/bookings/{booking}',[BookingController::class, 'edit' ])->name('bookings.edit');
+ Route::put('/bookings/{booking}',[BookingController::class, 'update' ])->name('bookings.update');
 
-//Admin (view list sellers,delelete seller)
+//Admin 
+Route::get('admin/index', 'AdminController@index')->name('home');
 //Route::get('admin/home',[App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 //Route::get('customer/home',[App\Http\Controllers\HomeController::class, 'customerHome'])->name('customer.customer-home')->middleware('is_customer');
-Route::get('admin/index', 'AdminController@index')->name('home');
 
+//Admin
 Route::get('admin/login', [AdminAuthController::class, 'adminLogin' ]); 
 Route::post('admin/checkReq', [AdminAuthController::class, 'adminCheckReq' ])->name('auth.adminCheckReq');
 Route::get('admin/profile', [AdminAuthController::class, 'adminProfile' ]); 
 
+//Customer
 Route::get('customer/login', [CustomerAuthController::class, 'custLogin' ]); 
 Route::get('customer/register', [CustomerAuthController::class, 'custRegister' ]);
 Route::post('customer/create', [CustomerAuthController::class, 'custCreate' ])->name('auth.custCreate');
@@ -43,8 +48,7 @@ Route::post('customer/checkReq', [CustomerAuthController::class, 'custCheckReq' 
 Route::get('customer/profile', [CustomerAuthController::class, 'custProfile' ]); 
 Route::get('/customer/{id}',[CustomerAuthController::class, 'profile' ])->name('customers.profile');
 
-//Route::get('/booking/create', [BookingController::class,'create'])->name('bookings.create');
-
+//Seller
 Route::get('seller/login', [SellerAuthController::class, 'login' ]); 
 Route::get('seller/register', [SellerAuthController::class, 'register' ]);
 Route::post('seller/create', [SellerAuthController::class, 'create' ])->name('auth.create');
@@ -52,5 +56,9 @@ Route::post('seller/checkReq', [SellerAuthController::class, 'checkReq' ])->name
 Route::get('seller/profile', [SellerAuthController::class, 'profile' ]); 
 Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
 
-//Route::get('/seller/{seller_name}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
-//Route::any('profile/{name}', 'ProfilController@index')->name('profile.index');
+//verify booking
+// Route::get('seller/verify', [SellerAuthController::class, 'verify' ]); 
+
+Route::get('/verify', [SellerAuthController::class, 'verify' ])->name('sellers.verify'); 
+Route::get('/approved/{id}', [SellerAuthController::class, 'approved' ]); 
+Route::get('/rejected/{id}', [SellerAuthController::class, 'rejected' ]); 

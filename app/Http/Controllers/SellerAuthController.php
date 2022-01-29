@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;  //tmbh
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Seller;
-
+use App\Booking;
 class SellerAuthController extends Controller
 {
     function login(){
@@ -93,7 +93,31 @@ class SellerAuthController extends Controller
        return view('sellers.profile',compact('seller'));
     }
 
-  
+    public function verify()  //verify booking from customers
+    {
+        $data=Booking::all();
+        return view('sellers.verify',compact('data'));
+    }
    
-    
+    public function approved($id)
+    {
+        $data=Booking::find($id);
+
+        $data->booking_status='approved';
+
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function rejected($id)
+    {
+        $data=Booking::find($id);
+
+        $data->booking_status='rejected';
+
+        $data->save();
+
+        return redirect()->back();
+    }
 }

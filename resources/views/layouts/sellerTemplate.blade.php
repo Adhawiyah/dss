@@ -75,12 +75,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li>
-          <li class="nav-item"> 
-          <a href="{{ route('sellers.index') }}"  class="nav-link">
-              <p>Profile </p>
-          </a>
-          </li>
+          
           
           <li>  <!--23hb -->
                 <li class="nav-item"> 
@@ -93,8 +88,16 @@
           <li>
             <li class="nav-item">
           <a href="{{ route('services.index') }}"  class="nav-link">
-          <i class="fab fa-servicestack"></i>
+          <i class="	fas fa-layer-group"></i>
               <p>Services</p>
+          </a>
+          </li>
+          <br>
+          <li>
+            <li class="nav-item">
+          <a href="{{ route('sellers.verify') }}"  class="nav-link">
+          <i class="far fa-bell" ></i>
+               <p>Verify Booking</p> 
           </a>
           </li>
           <br>

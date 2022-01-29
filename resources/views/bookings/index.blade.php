@@ -6,12 +6,12 @@
 <div class="col-sm-12">   
   <table class="table table-striped" style="background-color: #D3DEDC;">
     <thead>
-        <tr> <!-- Services here -->
+        <tr> 
           <th>Id</th>  
            <th>Service type</th>
            <th>Service location</th>
            <th>Date</th> 
-           <th>Service status</th>   
+           <th>Booking status</th>   
           <th colspan = 6>Actions</th>
         </tr>
     </thead>
@@ -26,8 +26,9 @@
             <td>
                 <a href="{{ route('bookings.edit',$b->id)}}" class="btn btn-primary">Edit</a>
             </td>
+            
             <td>
-                <form action="{{route('bookings.destroy', $s->id)}}" method="post">
+                <form action="{{route('bookings.destroy', $b->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

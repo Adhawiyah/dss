@@ -18,7 +18,7 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label> Username:</label>
+                                    <label> Username</label>
                                     <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="cust_username" name="cust_username" value="{{ old('cust_username',$customer->cust_username) }}">
                                 </div>
                             </div>
@@ -40,14 +40,14 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Service Type</label>
-                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type', $service->service_type) }}">    
+                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type', @$service->service_type) }}">    
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Service location</label>
-                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location', $service->service_location) }}">
+                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location', @$service->service_location) }}">
                                 </div>
                             </div>
 

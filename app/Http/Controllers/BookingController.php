@@ -49,21 +49,19 @@ class BookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-         $booking = Booking::create([
-            'service_id' => auth('service')->user()->id,
-            'seller_id' => auth('seller')->user()->id,
-            'cust_id' => auth('customer')->user()->id,
-            
-            'cust_username'=>$request->cust_username,
-            'cust_phoneNo'=>$request->cust_phoneNo,
-             'cust_address'=>$request->cust_address,
-             'service_type' =>$request->service_type,
-             'service_location' =>$request->service_location,
-             'booking_status'=>$request->booking_status,  
-            'date'=>$request->date,
-            
-            
+    {    
+            //
+            Booking::create([
+
+                'cust_id' => auth('customer')->user()->id,
+                'cust_username'=>$request->cust_username,
+                'cust_phoneNo'=>$request->cust_phoneNo,
+                'cust_address'=>$request->cust_address,
+                'service_type' =>$request->service_type,
+                'service_location' =>$request->service_location, 
+                'booking_status'=>$request->booking_status,
+                'date'=>$request->date,
+          
          ]);
 
         return redirect()->route('bookings.index')->with('Success! booking has been created');
@@ -94,6 +92,7 @@ class BookingController extends Controller
     {
         //CHECK HERE (error)
         $bookings = Booking::find($id);
+    
         return view('bookings.edit', compact('bookings'));
     }
 
@@ -104,21 +103,26 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)  //(Request $request, $id)
     {
         //
-        $request->validate([
-            'booking_status'=>'required',
-            'date'=>'required',
-            'location'=>'required',
-        ]);
-
         $bookings = Booking::find($id);
-        $bookings->booking_status = $request->booking_status;
-        $bookings->date = $request->date;
-        $bookings->location = $request->location;
-        
+        $request->validate([
+
+            // 'cust_username'=>'required',
+            //  'cust_phoneNo'=>'required',
+            //  'cust_address'=>'required',
+            //  'service_type' =>'required',
+            //  'service_location'=>'required', 
+            //  'booking_status'=>'required',
+             'date'=>'required',
+        ]);
+          
+       // $bookings->booking_status = $request->booking_status;
+         $bookings->date = $request->date;
+         return redirect()->route('bookings.index')->with('Success', 'Booking has been edited!');;
     }
+
 
     /**
      * Remove the specified resource from storage.
