@@ -92,7 +92,7 @@
           </a>
           <br>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('admins.adminProfile') }}" class="nav-link">
             <i class="far fa-user-circle"></i>
                 <p >List of Sellers</p> 
             </a>
@@ -123,7 +123,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">List of sellers</h1>
+            <h1 class="m-0"></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -145,13 +145,13 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  {{-- <footer class="main-footer">
     <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Training.com</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.0
     </div>
-  </footer>
+  </footer> --}}
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

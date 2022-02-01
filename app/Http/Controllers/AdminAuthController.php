@@ -50,6 +50,11 @@ class AdminAuthController extends Controller
 
     }
 
+    //List seller
+    public function listSeller()
+    {
+        return redirect('admins.index')->with('Success', 'List seller!');
+    }
 
     //verify register seller (based on serialNo)
     public function verify()  

@@ -38,7 +38,8 @@ Route::get('admin/index', 'AdminController@index')->name('home');
 //Admin
 Route::get('admin/login', [AdminAuthController::class, 'adminLogin' ]); 
 Route::post('admin/checkReq', [AdminAuthController::class, 'adminCheckReq' ])->name('auth.adminCheckReq');
-Route::get('admin/profile', [AdminAuthController::class, 'adminProfile' ]); 
+Route::get('admin/profile', [AdminAuthController::class, 'adminProfile' ])->name('admins.adminProfile');
+// Route::get('admin/', [AdminAuthController::class, 'listSeller' ])->name('admins.profile');
 
 //Customer
 Route::get('customer/login', [CustomerAuthController::class, 'custLogin' ]); 
@@ -57,7 +58,7 @@ Route::get('seller/profile', [SellerAuthController::class, 'profile' ]);
 Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
 
 //verify booking
- Route::get('/seller/verify', [SellerAuthController::class, 'verify' ])->name('sellers.verify'); 
+ Route::get('/verify', [SellerAuthController::class, 'verify' ])->name('sellers.verify'); 
 Route::get('/approved/{id}', [SellerAuthController::class, 'approved' ]); 
 Route::get('/rejected/{id}', [SellerAuthController::class, 'rejected' ]); 
 

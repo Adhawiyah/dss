@@ -115,7 +115,7 @@ class BookingController extends Controller
             //  'booking_status'=>'required',
              'date'=>'required',
         ]);
-          
+          $booking->update($request->all());
        // $bookings->booking_status = $request->booking_status;
         //  $booking->date = $request->date;
          return redirect()->route('bookings.index')->with('Success', 'Booking has been edited!');;
@@ -130,7 +130,7 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        // BAIKI YANG NII
+        
         $bookings=Booking::find($id);
         $bookings->delete();
         {
