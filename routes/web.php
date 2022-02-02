@@ -58,11 +58,16 @@ Route::get('seller/profile', [SellerAuthController::class, 'profile' ]);
 Route::get('/seller/{id}',[SellerAuthController::class, 'profile' ])->name('sellers.profile');
 
 //verify booking
- Route::get('/verify', [SellerAuthController::class, 'verify' ])->name('sellers.verify'); 
+Route::get('/verify', [SellerAuthController::class, 'verify' ])->name('sellers.verify'); 
 Route::get('/approved/{id}', [SellerAuthController::class, 'approved' ]); 
 Route::get('/rejected/{id}', [SellerAuthController::class, 'rejected' ]); 
 
+// Route::post('/booking/{id}',[SellerAuthController::class, 'approved']);
+// Route::post('/booking/{id}',[SellerAuthController::class, 'rejected']);
+
 //Verify seller profile
   Route::get('admin/verify', [AdminAuthController::class, 'verify' ])->name('admins.verify'); 
-  Route::get('/approved/{id}', [AdminAuthController::class, 'approved' ]); 
-  Route::get('/rejected/{id}', [AdminAuthController::class, 'rejected' ]); 
+  Route::get('POST/seller/{id}/approve', [AdminAuthController::class, 'approved' ]); 
+  Route::get('POST/seller/{id}/delete', [AdminAuthController::class, 'rejected' ]); 
+  
+  

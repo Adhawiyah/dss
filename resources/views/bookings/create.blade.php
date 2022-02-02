@@ -65,7 +65,16 @@
                                         <input type="date" class="form-control datetimepicker @error('date') is-invalid @enderror" name="date">
                                     </div>
                                 </div>
-                            </div>      
+                            </div>    
+                            
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Time</label>
+                                    <div class="cal-icon">
+                                        <input type="Time" class="form-control datetimepicker @error('time') is-invalid @enderror" name="time">
+                                    </div>
+                                </div>
+                            </div>   
                         </div>
                     </div>
                    

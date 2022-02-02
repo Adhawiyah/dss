@@ -19,7 +19,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        //   $services =Service::where('seller_id', auth('seller')->user()->id)->get();
         $bookings=Booking::where('cust_id', auth('customer')->user()->id)->get();
        
         return view('bookings.index', compact('bookings'));
@@ -62,6 +62,7 @@ class BookingController extends Controller
                 'service_location' =>$request->service_location, 
                 'booking_status'=>$request->booking_status,
                 'date'=>$request->date,
+                'time'=>$request->time,
           
          ]);
 
@@ -114,6 +115,7 @@ class BookingController extends Controller
             //  'service_location'=>'required', 
             //  'booking_status'=>'required',
              'date'=>'required',
+             'time'=>'required',
         ]);
           $booking->update($request->all());
        // $bookings->booking_status = $request->booking_status;

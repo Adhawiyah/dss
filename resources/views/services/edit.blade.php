@@ -23,7 +23,7 @@
   
                 <br>
                 <strong>Service Type  :</strong>
-                <select class="custom-select" value="{{$service->service_service_type}}"  name="service_type">
+                <select class="custom-select" value="{{$service->service_type}}"  name="service_type">
                     @foreach ($service as $s)      
                     @endforeach
                     <option >Car wash</option>

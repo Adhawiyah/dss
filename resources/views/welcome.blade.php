@@ -39,7 +39,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" class="fixed-top " style="background-color: #ffffff;">
     <div class="container d-flex align-items-center">
 
      <!-- <h3 class="logo me-auto"><a href="index.html">Wanna book online services?</a></h3> -->
@@ -48,11 +48,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>  
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="/seller/login">Seller</a></li>
-          <li><a class="nav-link   scrollto" href="/customer/login">Customer</a></li>
-          <li><a class="nav-link scrollto" href="/admin/login">Admin</a></li>  
+          <li><a class="nav-link scrollto" style="color:rgb(6, 97, 139);" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" style="color:rgb(6, 97, 139);" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" style="color:rgb(6, 97, 139);" href="/seller/login">Seller</a></li>
+          <li><a class="nav-link scrollto" style="color:rgb(6, 97, 139);" href="/customer/login">Customer</a></li>
+          <li><a class="nav-link scrollto" style="color:rgb(6, 97, 139);" href="/admin/login">Admin</a></li>  
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -68,10 +68,7 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>Daily Services System in Managing Business for Disabled People</h1>
           <h2>We are built relationship together as a family,Let's find something interesting here!!</h2>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-          </div>
+         
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
           <img src="{{ asset('admin/img/hero-img.png')}}" class="img-fluid animated" alt="">

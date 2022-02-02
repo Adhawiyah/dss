@@ -66,7 +66,8 @@ class AdminAuthController extends Controller
     public function approved($id)
     {
         $seller=Seller::find($id);
-
+        dd(request()->all());  
+        dd($seller);
         $seller->seller_status='approved';
 
         $seller->save();
@@ -77,7 +78,7 @@ class AdminAuthController extends Controller
     public function rejected($id)
     {
         $seller=Seller::find($id);
-
+        
         $seller->seller_status='rejected';
 
         $seller->save();

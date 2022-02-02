@@ -10,7 +10,7 @@
     @endif
   <!-- End Success Notification -->
 
-  <section style="background-color: #D3DEDC;">
+  <section style="background-color: #5F9EA0;">
   <div class="container py-5">
     <div class="row">
       <div class="col">
@@ -85,11 +85,11 @@
           </div>
         </div>
 
-        <div>
+        {{-- <div>
         <center>
             <p><p><button type="button" class="btn btn-primary">Edit Profile</button>
         </center>
-        </div> 
+        </div>  --}}
       
 
       </div>

@@ -80,13 +80,6 @@
           </div>
         </div>
 
-        <div>
-        <center>
-            <p><p><button type="button" class="btn btn-primary">Edit Profile</button>
-        </center>
-        </div> 
-      
-
       </div>
     </div>
   </div>

@@ -47,7 +47,17 @@
                                       <input type="date" class="form-control datetimepicker @error('date') is-invalid @enderror" name="date" value="{{$booking->date}}">
                                   </div>
                               </div>
-                          </div>      
+                          </div>     
+                          
+                            {{-- Time --}}
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Time</label>
+                                    <div class="cal-icon">
+                                        <input type="Time" class="form-control datetimepicker @error('time') is-invalid @enderror" name="time" value="{{$booking->time}}">
+                                    </div>
+                                </div>
+                            </div> 
 
                             {{-- Booking status --}}
                             <div class="col-md-4">
@@ -61,6 +71,7 @@
                 </div>
                 <p><p>
                   <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                      
                      <p><p><button type="submit" class="btn btn-primary"onclick="return confirm('Sure want to Submit')" >Save</button>
         
                        <a class="btn btn-primary" href="{{ route('bookings.index') }}"> Back</a>

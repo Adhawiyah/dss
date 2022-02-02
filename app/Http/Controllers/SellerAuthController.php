@@ -86,7 +86,7 @@ class SellerAuthController extends Controller
     //      return view('sellers.profile');
     //  }
 
-    function profile()           //25hb
+    function profile()           
     {   
         
         $seller=auth('seller')->user();
@@ -113,8 +113,8 @@ class SellerAuthController extends Controller
     public function rejected($id)
     {
         $data=Booking::find($id);
-
-        $data->booking_status='rejected';
+        
+        $data->booking_status='Rejected (Choose other time,date)';
 
         $data->save();
 

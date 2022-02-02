@@ -33,7 +33,7 @@
             <td>{{ $s->seller_phoneNo }}</td>  
             <td>{{ $s->seller_status }}</td>
             <td>
-                <a href="{{url('approved',$s->id)}}" class="btn btn-success">Approve</a>
+                <a href="{{url('approved',$s->id)}}" class="btn btn-success">Approve</a> 
             </td>
 
             <td>

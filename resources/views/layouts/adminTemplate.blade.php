@@ -76,13 +76,13 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-         <li>
+         {{-- <li>
             <li class="nav-item">
           <a href="admins.index"  class="nav-link">
           <i class="far fa-user-circle"></i>
               <p>Admin</p>
           </a>
-          </li>
+          </li> --}}
           <br>
           <li>
             <li class="nav-item">
