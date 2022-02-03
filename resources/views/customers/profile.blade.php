@@ -14,7 +14,7 @@
   <!-- End Success Notification  -->
 
 
-  <section style="background-color:#80ced6;">
+  <section style="background-color:#AED6F1  ;">
   <div class="container py-5" >
     <div class="row">
       <div class="col">

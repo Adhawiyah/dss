@@ -6,7 +6,7 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title mt-5">Create Booking</h3>
+                        <h3 class="page-title mt-5" align="center">Create Booking</h3>
                     </div>
                 </div>
             </div>
@@ -19,35 +19,35 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Username</label>
-                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="cust_username" name="cust_username" value="{{ old('cust_username',$customer->cust_username) }}">
+                                    <input type="text" class="form-control @error('cust_username') is-invalid @enderror" id="cust_username" name="cust_username" value="{{ old('cust_username',$customer->cust_username) }}" readonly>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Phone Number</label>
-                                    <input type="text" class="form-control @error('cust_phoneNo') is-invalid @enderror" id="cust_phoneNo" name="cust_phoneNo" value="{{ old('cust_phoneNo',$customer->cust_phoneNo) }}">
+                                    <input type="text" class="form-control @error('cust_phoneNo') is-invalid @enderror" id="cust_phoneNo" name="cust_phoneNo" value="{{ old('cust_phoneNo',$customer->cust_phoneNo) }}" readonly>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Address </label>
-                                    <input type="text" class="form-control @error('cust_address') is-invalid @enderror" id="cust_address" name="cust_address" value="{{ old('cust_address', $customer->cust_address) }}">
+                                    <input type="text" class="form-control @error('cust_address') is-invalid @enderror" id="cust_address" name="cust_address" value="{{ old('cust_address', $customer->cust_address) }}" readonly>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Service Type</label>
-                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type', @$service->service_type) }}">    
+                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ old('service_type', @$service->service_type) }}" readonly>    
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Service location</label>
-                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location', @$service->service_location) }}">
+                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ old('service_location', @$service->service_location) }}" readonly>
                                 </div>
                             </div>
 

@@ -20,7 +20,7 @@
       <b><td>{{ $s->id}}</td>
       <b><td>{{ $s->seller->seller_name}}</td>
       <b><td>{{ $s->service_type}}</td>
-      <b><td>{{ $s->service_status}}</td>  <!-- add service table in Admin controller ??-->
+      <b><td>{{ $s->service_status}}</td>  
   
   <td>
     <center>

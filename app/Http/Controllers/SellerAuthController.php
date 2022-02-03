@@ -103,7 +103,7 @@ class SellerAuthController extends Controller
     {
         $data=Booking::find($id);
 
-        $data->booking_status='approved';
+        $data->booking_status='Approved';
 
         $data->save();
 
@@ -114,7 +114,7 @@ class SellerAuthController extends Controller
     {
         $data=Booking::find($id);
         
-        $data->booking_status='Rejected (Choose other time,date)';
+        $data->booking_status='Rejected *choose other time and date';
 
         $data->save();
 

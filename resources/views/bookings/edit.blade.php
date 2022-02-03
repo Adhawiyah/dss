@@ -7,7 +7,7 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title mt-5">Edit Booking</h3>
+                        <h3 class="page-title mt-5" align="center">Edit Booking</h3>
                     </div>
                 </div>
             </div>
@@ -18,24 +18,24 @@
                     <div class="col-lg-12">
                         <div class="row formtype">
 
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Id</label>                                                                             
-                                    <input type="text" class="form-control @error('id') is-invalid @enderror" id="book_id" name="book_id" value="{{ old('book_id',$booking->id) }}">
+                                    <input type="text" class="form-control @error('id') is-invalid @enderror" id="book_id" name="book_id" value="{{ old('book_id',$booking->id) }}" readonly>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Service Type</label>
-                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ $booking->service_type }}">
+                                    <input type="text" class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ $booking->service_type }}" readonly>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Service Location </label>
-                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ $booking->service_location }}">
+                                    <input type="text" class="form-control @error('service_location') is-invalid @enderror" id="service_location" name="service_location" value="{{ $booking->service_location }}" readonly>
                                 </div>
                             </div>
                             

@@ -24,16 +24,17 @@
                 <br>
                 <strong>Service Type  :</strong>
                 <select class="custom-select" value="{{$service->service_type}}"  name="service_type">
-                    @foreach ($service as $s)      
-                    @endforeach
-                    <option >Car wash</option>
-                    <option >Eldercare</option>
-                    <option >Food Catering </option>
-                    <option >Grab</option>
-                    <option >House cleaning</option>
-                    <option >Laundry</option>
-                    <option >Nursing </option>
-                    <option >Skincare product</option>        
+                    @foreach ($service as $s)   
+
+                    @endforeach  
+                    <option value="Car Wash" {{$service->service_type == 'Car wash' ? 'selected' : ''}}>Car wash</option>
+                    <option value="Eldercare" {{$service->service_type == 'Eldercare' ? 'selected' : ''}}>Eldercare</option>
+                    <option value="Food Catering" {{$service->service_type == 'Food Catering' ? 'selected' : ''}}>Food Catering </option>
+                    <option value="Grab" {{$service->service_type == 'Grab' ? 'selected' : ''}}>Grab</option>
+                    <option value="House cleaning" {{$service->service_type == 'House cleaning' ? 'selected' : ''}}>House cleaning</option>
+                    <option value="Laundry" {{$service->service_type == 'Laundry' ? 'selected' : ''}}>Laundry</option>
+                    <option value="Nursing" {{$service->service_type == 'Nursing' ? 'selected' : ''}}>Nursing </option>
+                    <option value="Skincare product" {{$service->service_type == 'Skincare product' ? 'selected' : ''}}>Skincare product</option>      
                  </select>   
               <p><p>
 
@@ -42,19 +43,18 @@
                 <select class="custom-select" value="{{$service->service_location}}" name="service_location">
                         @foreach ($service as $s)      
                         @endforeach
-                              <option >Alor Gajah</option>
-                              <option >Masjid Tanah</option>
-                              <option >Melaka Tengah</option>
-                              <option >Jasin</option>
-                       
+                              <option value="Alor Gajah" {{$service->service_location == 'Alor Gajah' ? 'selected' : ''}}>Alor Gajah</option>
+                              <option value="Masjid Tanah" {{$service->service_location == 'Masjid Tanah' ? 'selected' : ''}}>Masjid Tanah</option>
+                              <option value="Melaka Tengah" {{$service->service_location == 'Melaka Tengah' ? 'selected' : ''}}>Melaka Tengah</option>
+                              <option value="Jasin" {{$service->service_location == 'Jasin' ? 'selected' : ''}}>Jasin</option> 
                  </select><p><p>
 
                 <strong>Service Status  :</strong>
                 <select class="custom-select" name="service_status">  
                     @foreach ($service as $s)      
                     @endforeach
-                            <option >Active</option>
-                            <option >Not Active</option>
+                            <option value="Active" {{$service->service_status == 'Active' ? 'selected' : ''}}>Active</option>
+                            <option value="Not Active" {{$service->service_status == 'Not Active' ? 'selected' : ''}}>Not Active</option>
                     
                  </select><p><p>
          </select><p><p>
