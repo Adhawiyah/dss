@@ -95,7 +95,8 @@ class SellerAuthController extends Controller
 
     public function verify()  //verify booking from customers
     {
-        $data=Booking::all();
+         $data=Booking::all(); //14hb
+
         return view('sellers.verify',compact('data'));
     }
    

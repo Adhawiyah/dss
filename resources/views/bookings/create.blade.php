@@ -11,6 +11,7 @@
                 </div>
             </div>
             <form action="{{ route('bookings.store') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" class="form-control @error('seller_id') is-invalid @enderror" id="seller_id" name="seller_id" value="{{ old('seller_id', @$service->seller_id) }}">
                 @csrf  
                 <div class="row">
                     <div class="col-lg-12">

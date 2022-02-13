@@ -101,7 +101,7 @@
               <li class="nav-item">
                   <a href="{{route('search.index')}}" class="nav-link">
                   <i class="fas fa-search"></i></i>
-                  <p>Search </p>
+                  <p>Search services </p>
                   </a>
               </li>
                <br>

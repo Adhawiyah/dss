@@ -63,6 +63,7 @@ class BookingController extends Controller
                 'booking_status'=>$request->booking_status,
                 'date'=>$request->date,
                 'time'=>$request->time,
+                'seller_id' =>$request->seller_id, 
           
          ]);
 

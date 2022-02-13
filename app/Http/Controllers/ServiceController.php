@@ -35,7 +35,7 @@ class ServiceController extends Controller
             'service_type'=>$request->service_type,
              'service_status'=>$request->service_status,
              'service_location'=>$request->service_location,
-             //'seller_id' => $request->seller_id,
+             'seller_id' => $request->seller_id,  //14hb
 
              'seller_id' => auth('seller')->user()->id,
          ]);

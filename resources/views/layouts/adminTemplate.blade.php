@@ -83,13 +83,13 @@
               <p>Admin</p>
           </a>
           </li> --}}
-          <br>
+          {{-- <br>
           <li>
             <li class="nav-item">
           <a href="{{ route('admins.verify') }}" class="nav-link">
           <i class="far fa-id-badge"></i>
               <p >Verify seller</p> 
-          </a>
+          </a> --}}
           <br>
           <li class="nav-item">
             <a href="{{ route('admins.adminProfile') }}" class="nav-link">

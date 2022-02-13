@@ -1,7 +1,7 @@
 @extends('layouts.sellerTemplate') 
 @section('content')
 
-<h2 align="center" style="color:rgb(71, 107, 107);">Verify your customer's booking</h2>
+<h2 align="center" style="color:rgb(71, 107, 107);">Verify customer booking</h2>
 <br><br>
 <div class="row" style="background-color: #92A9BD;">
 <div class="col-sm-12" >   
