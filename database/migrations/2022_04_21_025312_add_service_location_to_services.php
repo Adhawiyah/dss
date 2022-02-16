@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterAddSellIdColumnInServicesTable extends Migration
+class AddServiceLocationToServices extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class AlterAddSellIdColumnInServicesTable extends Migration
     {
         Schema::table('services', function (Blueprint $table) {
             //
-            $table->unsignedInteger('seller_id')->nullable();
-            $table->foreign('seller_id')->references('id')->on('services');
+            $table->string('service_location')->nullable()->after('service_status');
+           
         });
     }
 

@@ -17,7 +17,6 @@ class ServiceController extends Controller
         $services =Service::where('seller_id', auth('seller')->user()->id)->get();
         
         
-
         return view('services.index', compact('services'));
     }
 

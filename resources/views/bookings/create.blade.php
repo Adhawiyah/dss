@@ -6,7 +6,7 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title mt-5" align="center">Create Booking</h3>
+                        <h3 class="page-title mt-5" align="center">C Booking</h3>
                     </div>
                 </div>
             </div>

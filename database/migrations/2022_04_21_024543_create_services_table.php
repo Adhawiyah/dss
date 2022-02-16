@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterAddColumnServiceIdInBookingsTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class AlterAddColumnServiceIdInBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            $table->integer('service_id')->unsigned();
-            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+        Schema::create('services', function (Blueprint $table) {
+            
+            $table->increments('id');                    
+            $table->string('service_type');
+            $table->string('service_status');
+            $table->timestamps();
+
         });
     }
 
@@ -26,8 +30,6 @@ class AlterAddColumnServiceIdInBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('services');
     }
 }
